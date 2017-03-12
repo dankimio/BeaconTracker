@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					37A3178E1E75B82500BF3AEA = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Z9SY9LHRWJ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -258,6 +259,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z9SY9LHRWJ;
 				INFOPLIST_FILE = BeaconTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.dankim.BeaconTracker;
@@ -270,6 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z9SY9LHRWJ;
 				INFOPLIST_FILE = BeaconTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dk.dankim.BeaconTracker;
