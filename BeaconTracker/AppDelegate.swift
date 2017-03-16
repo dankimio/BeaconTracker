@@ -121,11 +121,6 @@ extension AppDelegate: CLLocationManagerDelegate {
     }
 
     previousProximity = beacon.proximity
-
-    if let backgroundTaskIdentifier = backgroundTaskIdentifier, beacon.proximity == .unknown {
-      print("Ending background task")
-      UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
-    }
   }
 
   func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
@@ -152,8 +147,6 @@ extension AppDelegate: CLLocationManagerDelegate {
       expirationHandler: nil
     )
     manager.startRangingBeacons(in: region)
-
-//    UIApplication.shared.endBackgroundTask(backgroundTask)
   }
 
   func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
@@ -171,6 +164,12 @@ extension AppDelegate: CLLocationManagerDelegate {
     )
 
     UNUserNotificationCenter.current().add(request)
+
+    // Stop background ranging
+    if let backgroundTaskIdentifier = backgroundTaskIdentifier {
+      print("Ending background task")
+      UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+    }
   }
 
   func locationManager(_ manager: CLLocationManager,
