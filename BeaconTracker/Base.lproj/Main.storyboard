@@ -92,12 +92,64 @@
                     </navigationItem>
                     <connections>
                         <segue destination="E9N-Jy-IQy" kind="unwind" identifier="UnwindFromNewBeaconToBeacons" unwindAction="unwindToBeaconsWithSegue:" id="ajN-rt-otR"/>
+                        <segue destination="L74-0N-ObX" kind="show" identifier="Passcode" id="CtQ-A2-c8s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="az9-WC-sJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="E9N-Jy-IQy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2569" y="90"/>
+        </scene>
+        <!--Passcode View Controller-->
+        <scene sceneID="E1f-cn-WpL">
+            <objects>
+                <viewController id="L74-0N-ObX" customClass="PasscodeViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HZw-BR-EsD"/>
+                        <viewControllerLayoutGuide type="bottom" id="pFr-Xz-wVe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ky6-bB-B1E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yXX-Lj-8pd">
+                                <rect key="frame" x="36" y="288.5" width="303" height="90"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KQy-1o-nk7">
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="8D1-Rj-FH5"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKd-Fk-ML5">
+                                        <rect key="frame" x="0.0" y="60" width="303" height="30"/>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="add:" destination="L74-0N-ObX" eventType="touchUpInside" id="Tln-UG-dZ9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yXX-Lj-8pd" firstAttribute="leading" secondItem="Ky6-bB-B1E" secondAttribute="leadingMargin" constant="20" id="Z2h-RD-0nv"/>
+                            <constraint firstItem="yXX-Lj-8pd" firstAttribute="centerY" secondItem="Ky6-bB-B1E" secondAttribute="centerY" id="Z9m-OS-2Fh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yXX-Lj-8pd" secondAttribute="trailing" constant="20" id="j4Z-gY-zJS"/>
+                            <constraint firstItem="yXX-Lj-8pd" firstAttribute="centerX" secondItem="Ky6-bB-B1E" secondAttribute="centerX" id="j8u-SX-3W2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="MQg-TQ-L1t" kind="unwind" identifier="UnwindFromPasscodeToBeacons" unwindAction="unwindToBeaconsWithSegue:" id="8Fx-to-z6f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVO-jo-rSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="MQg-TQ-L1t" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2569" y="814"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

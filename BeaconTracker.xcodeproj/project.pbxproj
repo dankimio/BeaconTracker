@@ -16,6 +16,7 @@
 		37DCFBD31EA98D3B00E43139 /* BeaconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCFBD21EA98D3B00E43139 /* BeaconsViewController.swift */; };
 		37DCFBD51EA9945500E43139 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCFBD41EA9945500E43139 /* SignupViewController.swift */; };
 		37DCFBD71EA9968A00E43139 /* NewBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCFBD61EA9968A00E43139 /* NewBeaconViewController.swift */; };
+		37DCFBDB1EA99D6000E43139 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCFBDA1EA99D6000E43139 /* PasscodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		37DCFBD21EA98D3B00E43139 /* BeaconsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconsViewController.swift; sourceTree = "<group>"; };
 		37DCFBD41EA9945500E43139 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		37DCFBD61EA9968A00E43139 /* NewBeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBeaconViewController.swift; sourceTree = "<group>"; };
+		37DCFBDA1EA99D6000E43139 /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				37DCFBD21EA98D3B00E43139 /* BeaconsViewController.swift */,
 				37DCFBD41EA9945500E43139 /* SignupViewController.swift */,
 				37DCFBD61EA9968A00E43139 /* NewBeaconViewController.swift */,
+				37DCFBDA1EA99D6000E43139 /* PasscodeViewController.swift */,
 			);
 			path = BeaconTracker;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37DCFBDB1EA99D6000E43139 /* PasscodeViewController.swift in Sources */,
 				37DCFBD11EA98BCC00E43139 /* LoginViewController.swift in Sources */,
 				37A317951E75B82500BF3AEA /* ViewController.swift in Sources */,
 				37DCFBD51EA9945500E43139 /* SignupViewController.swift in Sources */,
