@@ -17,9 +17,11 @@
 		37DCFBD51EA9945500E43139 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCFBD41EA9945500E43139 /* SignupViewController.swift */; };
 		37DCFBD71EA9968A00E43139 /* NewBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCFBD61EA9968A00E43139 /* NewBeaconViewController.swift */; };
 		37DCFBDB1EA99D6000E43139 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCFBDA1EA99D6000E43139 /* PasscodeViewController.swift */; };
+		BA73C085A3A7804165E6A35A /* Pods_BeaconTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E8E8172E93A31DF1556024 /* Pods_BeaconTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21F2E1BA33E6758666CA5AB8 /* Pods-BeaconTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconTracker/Pods-BeaconTracker.release.xcconfig"; sourceTree = "<group>"; };
 		37A3178F1E75B82500BF3AEA /* BeaconTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeaconTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A317921E75B82500BF3AEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37A317941E75B82500BF3AEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 		37DCFBD41EA9945500E43139 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		37DCFBD61EA9968A00E43139 /* NewBeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBeaconViewController.swift; sourceTree = "<group>"; };
 		37DCFBDA1EA99D6000E43139 /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
+		65E8E8172E93A31DF1556024 /* Pods_BeaconTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeaconTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C05DA6AEC29B8BF7534F82C0 /* Pods-BeaconTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconTracker/Pods-BeaconTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA73C085A3A7804165E6A35A /* Pods_BeaconTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,8 @@
 			children = (
 				37A317911E75B82500BF3AEA /* BeaconTracker */,
 				37A317901E75B82500BF3AEA /* Products */,
+				C9E1EAB555F0AB21E7FB512A /* Pods */,
+				EF3625072C9664EEC8AFE0C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,23 @@
 			path = BeaconTracker;
 			sourceTree = "<group>";
 		};
+		C9E1EAB555F0AB21E7FB512A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C05DA6AEC29B8BF7534F82C0 /* Pods-BeaconTracker.debug.xcconfig */,
+				21F2E1BA33E6758666CA5AB8 /* Pods-BeaconTracker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EF3625072C9664EEC8AFE0C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65E8E8172E93A31DF1556024 /* Pods_BeaconTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37A317A11E75B82500BF3AEA /* Build configuration list for PBXNativeTarget "BeaconTracker" */;
 			buildPhases = (
+				23557AF06364E336D4938BEC /* [CP] Check Pods Manifest.lock */,
 				37A3178B1E75B82500BF3AEA /* Sources */,
 				37A3178C1E75B82500BF3AEA /* Frameworks */,
 				37A3178D1E75B82500BF3AEA /* Resources */,
+				719FA53D0EA488A7996CC998 /* [CP] Embed Pods Frameworks */,
+				D077B1FF2D7B9BB4B8E34627 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +173,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23557AF06364E336D4938BEC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		719FA53D0EA488A7996CC998 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeaconTracker/Pods-BeaconTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D077B1FF2D7B9BB4B8E34627 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeaconTracker/Pods-BeaconTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		37A3178B1E75B82500BF3AEA /* Sources */ = {
@@ -277,6 +352,7 @@
 		};
 		37A317A21E75B82500BF3AEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C05DA6AEC29B8BF7534F82C0 /* Pods-BeaconTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -291,6 +367,7 @@
 		};
 		37A317A31E75B82500BF3AEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21F2E1BA33E6758666CA5AB8 /* Pods-BeaconTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
