@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import UserNotifications
 
 class ViewController: UIViewController {
 
@@ -17,41 +18,134 @@ class ViewController: UIViewController {
     proximityUUID: UUID(uuidString: "00000000-0000-0000-0000-000000000000")!,
     major: 1,
     minor: 1,
-    identifier: "Bag"
+    identifier: "identifier"
   )
+
+  var previousProximity: CLProximity?
+  var backgroundTaskIdentifier: UIBackgroundTaskIdentifier?
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Do any additional setup after loading the view, typically from a nib.
-//    guard CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) else {
-//      print("Monitoring unavailable")
-//      return
-//    }
-//
-//    if CLLocationManager.authorizationStatus() != .authorizedAlways {
-//      locationManager.requestAlwaysAuthorization()
-//    }
-//
-//    locationManager.delegate = self
-//    locationManager.startRangingBeacons(in: region)
-  }
+    // Configure notifications
+    UNUserNotificationCenter
+      .current()
+      .requestAuthorization(options: [.alert, .badge, .sound]) {_,_ in
+        print("requestAuthorization")
+    }
 
+    // Configure location manager
+    guard CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) else {
+      print("Monitoring unavailable")
+      return
+    }
+
+    if CLLocationManager.authorizationStatus() != .authorizedAlways {
+      locationManager.requestAlwaysAuthorization()
+    }
+
+    region.notifyEntryStateOnDisplay = true
+
+    locationManager.delegate = self
+    locationManager.startMonitoring(for: region)
+  }
 }
 
-//extension ViewController: CLLocationManagerDelegate {
-//  func locationManager(_ manager: CLLocationManager,
-//                       didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-//    print(beacons)
-//  }
-//
-//  func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-//    print("didEnterRegion")
-//    print(region)
-//  }
-//
-//  func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-//    print("didExitRegion")
-//    print(region)
-//  }
-//}
+extension ViewController: CLLocationManagerDelegate {
+  func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
+    print(locationManager.requestState(for: region))
+  }
+
+  func locationManager(_ manager: CLLocationManager,
+                       didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+    print(beacons)
+
+    guard let beacon = beacons.first else { return }
+
+    // Notify of new proximity state
+    if previousProximity != beacon.proximity {
+      let message: String
+      switch beacon.proximity {
+      case .far: message = "Far"
+      case .immediate: message = "Immediate"
+      case .near: message = "Near"
+      case .unknown: message = "Unknown"
+      }
+
+      let content = UNMutableNotificationContent()
+      content.title = "Proximity"
+      content.body = message
+      content.sound = UNNotificationSound.default()
+
+      let request = UNNotificationRequest(
+        identifier: "beaconProximityChanged",
+        content: content,
+        trigger: nil
+      )
+
+      UNUserNotificationCenter.current().add(request)
+    }
+
+    previousProximity = beacon.proximity
+  }
+
+  func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+    print("didEnterRegion")
+
+    let content = UNMutableNotificationContent()
+    content.title = "didEnterRegion"
+    content.body = "didEnterRegion"
+    content.sound = UNNotificationSound.default()
+
+    let request = UNNotificationRequest(
+      identifier: "didEnterRegion",
+      content: content,
+      trigger: nil
+    )
+
+    UNUserNotificationCenter.current().add(request)
+
+    // Start ranging in background
+    guard let region = region as? CLBeaconRegion else { return }
+
+    backgroundTaskIdentifier = UIApplication.shared.beginBackgroundTask(
+      withName: "ranging",
+      expirationHandler: nil
+    )
+    manager.startRangingBeacons(in: region)
+  }
+
+  func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+    print("didExitRegion")
+
+    let content = UNMutableNotificationContent()
+    content.title = "didExitRegion"
+    content.body = "didExitRegion"
+    content.sound = UNNotificationSound.default()
+
+    let request = UNNotificationRequest(
+      identifier: "didEnterRegion",
+      content: content,
+      trigger: nil
+    )
+
+    UNUserNotificationCenter.current().add(request)
+
+    // Stop background ranging
+    if let backgroundTaskIdentifier = backgroundTaskIdentifier {
+      print("Ending background task")
+      UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+    }
+  }
+
+  func locationManager(_ manager: CLLocationManager,
+                       didDetermineState state: CLRegionState, for region: CLRegion) {
+    print("didDetermineState: ", terminator: "")
+
+    switch state {
+    case .inside: print("inside")
+    case .outside: print("outside")
+    case .unknown: print("unknown")
+    }
+  }
+}
