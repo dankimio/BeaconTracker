@@ -19,6 +19,7 @@
 		37DCFBDB1EA99D6000E43139 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCFBDA1EA99D6000E43139 /* PasscodeViewController.swift */; };
 		37DDA5F91EABCB5900318CE2 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DDA5F81EABCB5900318CE2 /* RoundedButton.swift */; };
 		37DDA5FB1EABD8EF00318CE2 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DDA5FA1EABD8EF00318CE2 /* Beacon.swift */; };
+		37DDA5FD1EABE53D00318CE2 /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DDA5FC1EABE53D00318CE2 /* BeaconTableViewCell.swift */; };
 		BA73C085A3A7804165E6A35A /* Pods_BeaconTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E8E8172E93A31DF1556024 /* Pods_BeaconTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		37DCFBDA1EA99D6000E43139 /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
 		37DDA5F81EABCB5900318CE2 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		37DDA5FA1EABD8EF00318CE2 /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		37DDA5FC1EABE53D00318CE2 /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewCell.swift; sourceTree = "<group>"; };
 		65E8E8172E93A31DF1556024 /* Pods_BeaconTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeaconTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05DA6AEC29B8BF7534F82C0 /* Pods-BeaconTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconTracker/Pods-BeaconTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 				37DCFBDA1EA99D6000E43139 /* PasscodeViewController.swift */,
 				37DDA5F81EABCB5900318CE2 /* RoundedButton.swift */,
 				37DDA5FA1EABD8EF00318CE2 /* Beacon.swift */,
+				37DDA5FC1EABE53D00318CE2 /* BeaconTableViewCell.swift */,
 			);
 			path = BeaconTracker;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				37DCFBDB1EA99D6000E43139 /* PasscodeViewController.swift in Sources */,
 				37DCFBD11EA98BCC00E43139 /* LoginViewController.swift in Sources */,
 				37A317951E75B82500BF3AEA /* ViewController.swift in Sources */,
+				37DDA5FD1EABE53D00318CE2 /* BeaconTableViewCell.swift in Sources */,
 				37DDA5F91EABCB5900318CE2 /* RoundedButton.swift in Sources */,
 				37DCFBD51EA9945500E43139 /* SignupViewController.swift in Sources */,
 				37DDA5FB1EABD8EF00318CE2 /* Beacon.swift in Sources */,

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconCell" rowHeight="88" id="2hQ-z0-4nn">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconCell" rowHeight="88" id="2hQ-z0-4nn" customClass="BeaconTableViewCell" customModule="BeaconTracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2hQ-z0-4nn" id="IiG-u9-sty">
@@ -53,6 +53,11 @@
                                         <constraint firstItem="uDb-88-RCL" firstAttribute="centerY" secondItem="IiG-u9-sty" secondAttribute="centerY" id="y3R-Nd-sEc"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="zs4-V0-1dO" id="aCt-eW-oof"/>
+                                    <outlet property="enabledSwitch" destination="uDb-88-RCL" id="Ngi-hW-JuM"/>
+                                    <outlet property="nameLabel" destination="VVq-kG-XsW" id="Jqp-zb-Rd9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

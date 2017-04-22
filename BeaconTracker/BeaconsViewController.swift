@@ -15,8 +15,8 @@ class BeaconsViewController: UITableViewController {
     Beacon(name: "Bag 2", major: 0, minor: 1),
     Beacon(name: "Bag 3", major: 0, minor: 2),
     Beacon(name: "Bag 4", major: 0, minor: 3),
-    Beacon(name: "Bag 5", major: 0, minor: 4),
-    ]
+    Beacon(name: "Bag 5", major: 0, minor: 4)
+  ]
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -48,8 +48,13 @@ class BeaconsViewController: UITableViewController {
   override func tableView(_ tableView: UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "BeaconCell", for: indexPath)
+      as! BeaconTableViewCell
+    let beacon = beacons[indexPath.row]
 
-    // Configure the cell...
+    cell.nameLabel.text = beacon.name
+    cell.descriptionLabel.text = "Moscow, Russia – Sat, Apr 22"
+    cell.enabledSwitch.isOn = false
+
     return cell
   }
 
