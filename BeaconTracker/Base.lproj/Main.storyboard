@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Beacons View Controller-->
+        <!--Beacons-->
         <scene sceneID="wl9-Z6-glh">
             <objects>
                 <tableViewController id="j8y-av-toO" customClass="BeaconsViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +60,7 @@
                             <outlet property="delegate" destination="j8y-av-toO" id="MyT-mU-aZ7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2td-qT-gxv">
+                    <navigationItem key="navigationItem" title="Beacons" id="2td-qT-gxv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6V1-Qp-ld0">
                             <connections>
                                 <segue destination="NOc-Bc-EJu" kind="presentation" id="oc7-6s-Ja8"/>
@@ -75,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="852" y="91.304347826086968"/>
         </scene>
-        <!--New Beacon View Controller-->
+        <!--Add Beacon-->
         <scene sceneID="He3-tU-VxZ">
             <objects>
                 <viewController id="2cx-QO-xBS" customClass="NewBeaconViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                             <constraint firstItem="SoT-R6-yeP" firstAttribute="centerY" secondItem="nqC-vl-0yL" secondAttribute="centerY" id="wcc-vA-X0y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Lin-cP-dJa">
+                    <navigationItem key="navigationItem" title="Add Beacon" id="Lin-cP-dJa">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fR7-xa-YHX">
                             <connections>
                                 <action selector="cancel:" destination="2cx-QO-xBS" id="QIQ-3z-Wyd"/>

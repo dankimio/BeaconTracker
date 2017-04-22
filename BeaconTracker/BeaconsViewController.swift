@@ -10,7 +10,7 @@ import UIKit
 
 class BeaconsViewController: UITableViewController {
 
-  let beacons = [
+  var beacons = [
     Beacon(name: "Bag 1", major: 0, minor: 0),
     Beacon(name: "Bag 2", major: 0, minor: 1),
     Beacon(name: "Bag 3", major: 0, minor: 2),
@@ -45,7 +45,8 @@ class BeaconsViewController: UITableViewController {
     return beacons.count
   }
 
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  override func tableView(_ tableView: UITableView,
+                          cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "BeaconCell", for: indexPath)
 
     // Configure the cell...
@@ -58,32 +59,27 @@ class BeaconsViewController: UITableViewController {
     return true
   }
 
-  /*
-   // Override to support editing the table view.
-   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-   if editingStyle == .delete {
-   // Delete the row from the data source
-   tableView.deleteRows(at: [indexPath], with: .fade)
-   } else if editingStyle == .insert {
-   // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-   }
-   }
-   */
+  // Override to support editing the table view.
+  override func tableView(_ tableView: UITableView,
+                          commit editingStyle: UITableViewCellEditingStyle,
+                          forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      // Delete the row from the data source
+      beacons.remove(at: indexPath.row)
+      tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+  }
 
-  /*
-   // Override to support rearranging the table view.
-   override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+  // Override to support rearranging the table view.
+  override func tableView(_ tableView: UITableView,
+                          moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+  }
 
-   }
-   */
-
-  /*
-   // Override to support conditional rearranging of the table view.
-   override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-   // Return false if you do not want the item to be re-orderable.
-   return true
-   }
-   */
+  // Override to support conditional rearranging of the table view.
+  override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    // Return false if you do not want the item to be re-orderable.
+    return true
+  }
 
   @IBAction func unwindToBeacons(segue: UIStoryboardSegue) {
     print("TEST")
