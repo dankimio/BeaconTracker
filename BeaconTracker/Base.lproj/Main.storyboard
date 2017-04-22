@@ -14,45 +14,42 @@
         <scene sceneID="wl9-Z6-glh">
             <objects>
                 <tableViewController id="j8y-av-toO" customClass="BeaconsViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="HSP-ZQ-wFo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" id="HSP-ZQ-wFo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="2hQ-z0-4nn">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeaconCell" rowHeight="88" id="2hQ-z0-4nn">
+                                <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2hQ-z0-4nn" id="IiG-u9-sty">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Baggage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVq-kG-XsW">
-                                            <rect key="frame" x="8" y="8" width="68" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last seen at: Moscow, Russia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkc-c0-uhO">
-                                            <rect key="frame" x="8" y="37" width="224" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fri, Apr 21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-V0-1dO">
-                                            <rect key="frame" x="8" y="68" width="78" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uDb-88-RCL">
-                                            <rect key="frame" x="318" y="34" width="51" height="31"/>
+                                            <rect key="frame" x="310" y="28.5" width="51" height="31"/>
                                         </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baggage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVq-kG-XsW">
+                                            <rect key="frame" x="16" y="16" width="286" height="24"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moscow, Russia – Fri, Apr 21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-V0-1dO">
+                                            <rect key="frame" x="16" y="48" width="286" height="18"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="uDb-88-RCL" secondAttribute="trailing" id="Ri3-fY-Wnb"/>
+                                        <constraint firstItem="VVq-kG-XsW" firstAttribute="leading" secondItem="IiG-u9-sty" secondAttribute="leadingMargin" constant="8" id="A4Y-fh-lHx"/>
+                                        <constraint firstItem="uDb-88-RCL" firstAttribute="leading" secondItem="zs4-V0-1dO" secondAttribute="trailing" constant="8" id="BCK-2a-GLj"/>
+                                        <constraint firstItem="uDb-88-RCL" firstAttribute="leading" secondItem="VVq-kG-XsW" secondAttribute="trailing" constant="8" id="GWz-4C-JoO"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uDb-88-RCL" secondAttribute="trailing" constant="8" id="Ri3-fY-Wnb"/>
+                                        <constraint firstAttribute="topMargin" secondItem="VVq-kG-XsW" secondAttribute="top" constant="-8" id="cmC-XP-nO3"/>
+                                        <constraint firstItem="zs4-V0-1dO" firstAttribute="top" secondItem="VVq-kG-XsW" secondAttribute="bottom" constant="8" id="ebS-fb-Ub2"/>
+                                        <constraint firstItem="zs4-V0-1dO" firstAttribute="leading" secondItem="IiG-u9-sty" secondAttribute="leadingMargin" constant="8" id="mgm-x0-v0i"/>
                                         <constraint firstItem="uDb-88-RCL" firstAttribute="centerY" secondItem="IiG-u9-sty" secondAttribute="centerY" id="y3R-Nd-sEc"/>
                                     </constraints>
                                 </tableViewCellContentView>
