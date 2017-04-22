@@ -93,22 +93,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SoT-R6-yeP">
-                                <rect key="frame" x="36" y="303.5" width="302.5" height="60.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="SoT-R6-yeP">
+                                <rect key="frame" x="36" y="287" width="302.5" height="93.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Come close to your bag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P67-Ua-5a7">
-                                        <rect key="frame" x="60.5" y="0.0" width="181.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="35" y="0.0" width="233" height="26.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xkC-77-ewx">
-                                        <rect key="frame" x="141.5" y="40.5" width="20" height="20"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xkC-77-ewx">
+                                        <rect key="frame" x="133" y="56.5" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </activityIndicatorView>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="SoT-R6-yeP" secondAttribute="trailing" constant="20" id="gUS-6z-dn4"/>
                             <constraint firstItem="SoT-R6-yeP" firstAttribute="leading" secondItem="nqC-vl-0yL" secondAttribute="leadingMargin" constant="20" id="q4K-bn-YhC"/>
@@ -132,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="2569" y="90"/>
         </scene>
-        <!--Passcode View Controller-->
+        <!--Enter Passcode-->
         <scene sceneID="E1f-cn-WpL">
             <objects>
-                <viewController id="L74-0N-ObX" customClass="PasscodeViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Enter Passcode" id="L74-0N-ObX" customClass="PasscodeViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HZw-BR-EsD"/>
                         <viewControllerLayoutGuide type="bottom" id="pFr-Xz-wVe"/>
@@ -145,7 +146,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yXX-Lj-8pd">
-                                <rect key="frame" x="36" y="288.5" width="303" height="90"/>
+                                <rect key="frame" x="36" y="283.5" width="303" height="100"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KQy-1o-nk7">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="40"/>
@@ -157,9 +158,15 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKd-Fk-ML5" customClass="RoundedButton" customModule="BeaconTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="60" width="303" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Add"/>
+                                        <rect key="frame" x="0.0" y="60" width="303" height="40"/>
+                                        <color key="backgroundColor" red="0.78431372549019607" green="0.84313725490196079" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="5Ai-Mv-clr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="Add">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="5"/>
@@ -172,7 +179,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yXX-Lj-8pd" firstAttribute="leading" secondItem="Ky6-bB-B1E" secondAttribute="leadingMargin" constant="20" id="Z2h-RD-0nv"/>
                             <constraint firstItem="yXX-Lj-8pd" firstAttribute="centerY" secondItem="Ky6-bB-B1E" secondAttribute="centerY" id="Z9m-OS-2Fh"/>

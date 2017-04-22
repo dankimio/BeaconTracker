@@ -18,7 +18,7 @@ class PasscodeViewController: UIViewController {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
-    print(beacon.proximityUUID)
+//    print(beacon.proximityUUID)
   }
 
   @IBAction func add(_ sender: UIButton) {

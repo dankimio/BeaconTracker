@@ -23,6 +23,10 @@ class NewBeaconViewController: UIViewController {
     // Do any additional setup after loading the view.
     locationManager.delegate = self
     locationManager.startRangingBeacons(in: region)
+
+    if true {
+      performSegue(withIdentifier: "Passcode", sender: CLBeacon())
+    }
   }
 
   @IBAction func cancel(_ sender: UIBarButtonItem) {
