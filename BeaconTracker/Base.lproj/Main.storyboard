@@ -19,12 +19,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2hQ-z0-4nn">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="2hQ-z0-4nn">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2hQ-z0-4nn" id="IiG-u9-sty">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Baggage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVq-kG-XsW">
+                                            <rect key="frame" x="8" y="8" width="68" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last seen at: Moscow, Russia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkc-c0-uhO">
+                                            <rect key="frame" x="8" y="37" width="224" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fri, Apr 21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs4-V0-1dO">
+                                            <rect key="frame" x="8" y="68" width="78" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uDb-88-RCL">
+                                            <rect key="frame" x="318" y="34" width="51" height="31"/>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uDb-88-RCL" secondAttribute="trailing" id="Ri3-fY-Wnb"/>
+                                        <constraint firstItem="uDb-88-RCL" firstAttribute="centerY" secondItem="IiG-u9-sty" secondAttribute="centerY" id="y3R-Nd-sEc"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -77,7 +107,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SoT-R6-yeP" firstAttribute="centerX" secondItem="nqC-vl-0yL" secondAttribute="centerX" id="cbx-n7-VYO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SoT-R6-yeP" secondAttribute="trailing" constant="20" id="gUS-6z-dn4"/>
                             <constraint firstItem="SoT-R6-yeP" firstAttribute="leading" secondItem="nqC-vl-0yL" secondAttribute="leadingMargin" constant="20" id="q4K-bn-YhC"/>
                             <constraint firstItem="SoT-R6-yeP" firstAttribute="centerY" secondItem="nqC-vl-0yL" secondAttribute="centerY" id="wcc-vA-X0y"/>
@@ -124,9 +153,15 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKd-Fk-ML5">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKd-Fk-ML5" customClass="RoundedButton" customModule="BeaconTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="60" width="303" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Add"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="add:" destination="L74-0N-ObX" eventType="touchUpInside" id="Tln-UG-dZ9"/>
                                         </connections>
@@ -169,7 +204,7 @@
             </objects>
             <point key="canvasLocation" x="3383.1999999999998" y="89.505247376311857"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Log In-->
         <scene sceneID="0vf-Pq-HoW">
             <objects>
                 <viewController id="G78-cv-Vc0" customClass="LoginViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -182,7 +217,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Uj9-SI-qRE">
-                                <rect key="frame" x="36" y="258" width="303" height="150"/>
+                                <rect key="frame" x="36" y="253" width="303" height="160"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZM4-Xg-F5w">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="40"/>
@@ -202,9 +237,21 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUy-fm-CyR">
-                                        <rect key="frame" x="0.0" y="120" width="303" height="30"/>
-                                        <state key="normal" title="Log In"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUy-fm-CyR" customClass="RoundedButton" customModule="BeaconTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="120" width="303" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.70588235294117641" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="FJm-Ck-00V"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="logIn:" destination="G78-cv-Vc0" eventType="touchUpInside" id="12P-NT-W3M"/>
                                         </connections>
@@ -242,7 +289,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Uj9-SI-qRE" secondAttribute="trailing" constant="20" id="v5O-Dj-dtH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Y2N-pN-cpK"/>
+                    <navigationItem key="navigationItem" title="Log In" id="Y2N-pN-cpK"/>
                     <connections>
                         <segue destination="q47-Ia-tYp" kind="unwind" identifier="UnwindFromLoginToBeacons" unwindAction="unwindToBeaconsWithSegue:" id="Jno-EU-WSG"/>
                     </connections>
@@ -252,10 +299,10 @@
             </objects>
             <point key="canvasLocation" x="852" y="1526"/>
         </scene>
-        <!--Signup View Controller-->
+        <!--Sign Up-->
         <scene sceneID="PUH-Ud-5zq">
             <objects>
-                <viewController id="vAR-Y6-vDX" customClass="SignupViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Sign Up" id="vAR-Y6-vDX" customClass="SignupViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JfK-2N-OII"/>
                         <viewControllerLayoutGuide type="bottom" id="HAe-Mr-apg"/>
@@ -265,7 +312,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dsd-Ls-Yh3">
-                                <rect key="frame" x="36" y="198" width="303" height="270"/>
+                                <rect key="frame" x="36" y="193" width="303" height="280"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y1x-Kb-9g1">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="40"/>
@@ -303,9 +350,21 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <textInputTraits key="textInputTraits" keyboardAppearance="alert" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJB-WE-Lcp">
-                                        <rect key="frame" x="0.0" y="240" width="303" height="30"/>
-                                        <state key="normal" title="Sign up"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJB-WE-Lcp" customClass="RoundedButton" customModule="BeaconTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="240" width="303" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="UMU-9d-a77"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="Sign up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="signUp:" destination="vAR-Y6-vDX" eventType="touchUpInside" id="rKU-82-Eg4"/>
                                         </connections>
@@ -335,9 +394,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OsE-1t-N10" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yqw-k4-Zn8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Yqw-k4-Zn8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.70588235290000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -353,9 +417,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V4A-jf-8KD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6WV-79-dId">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="6WV-79-dId">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.70588235290000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -371,9 +440,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NOc-Bc-EJu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ET4-K3-y9h">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="ET4-K3-y9h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.70588235290000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
