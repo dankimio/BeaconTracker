@@ -10,18 +10,42 @@ import UIKit
 
 class SignupViewController: UIViewController {
 
+  @IBOutlet weak var emailTextField: UITextField!
+  @IBOutlet weak var nameTextField: UITextField!
+  @IBOutlet weak var passwordTextField: UITextField!
+  @IBOutlet weak var passwordConfirmTextField: UITextField!
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
   @IBAction func signUp(_ sender: UIButton) {
     performSegue(withIdentifier: "UnwindFromSignupToBeacons", sender: self)
   }
+
+  // Resign first responder when tapped outside text field
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    view.endEditing(true)
+  }
+}
+
+extension SignupViewController: UITextFieldDelegate {
+
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    switch textField {
+    case emailTextField:
+      nameTextField.becomeFirstResponder()
+    case nameTextField:
+      passwordTextField.becomeFirstResponder()
+    case passwordTextField:
+      passwordConfirmTextField.becomeFirstResponder()
+    default:
+      view.endEditing(true)
+    }
+
+    return true
+  }
+  
 }
