@@ -12,12 +12,21 @@ import Alamofire
 
 class PasscodeViewController: UIViewController {
 
+  @IBOutlet weak var passcodeTextField: UITextField!
+
   var beacon: CLBeacon!
 
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    passcodeTextField.becomeFirstResponder()
+  }
+
   @IBAction func add(_ sender: UIButton) {
-    //    let majorMinorString = "\(beacon.major)-\(beacon.minor)"
-        let majorMinorString = "0-0"
-        let params: [String: Any] = ["api_token": "foobar", "beacon": ["code": "1234"]]
+    guard let passcode = passcodeTextField.text else { return }
+
+    let majorMinorString = "\(beacon.major)-\(beacon.minor)"
+    let params: [String: Any] = ["api_token": "foobar", "beacon": ["passcode": passcode]]
 
     Alamofire
       .request(

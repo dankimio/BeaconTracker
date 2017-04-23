@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import CoreLocation
+import UserNotifications
 
 class BeaconsViewController: UITableViewController {
+
+  let locationManager = CLLocationManager()
 
   var beacons = [
     Beacon(name: "Bag 1", major: 0, minor: 0),
@@ -24,15 +28,12 @@ class BeaconsViewController: UITableViewController {
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.leftBarButtonItem = self.editButtonItem
 
-    // TODO: present login view if not logged in
-    if false {
-      performSegue(withIdentifier: "Login", sender: self)
-    }
-  }
+    requestAuthorization()
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+    // TODO: present login view if not logged in
+//    if false {
+//      performSegue(withIdentifier: "Login", sender: self)
+//    }
   }
 
   // MARK: - Table view data source
@@ -87,7 +88,28 @@ class BeaconsViewController: UITableViewController {
   }
 
   @IBAction func unwindToBeacons(segue: UIStoryboardSegue) {
-    print("TEST")
+    print("LALKA")
   }
-  
+
+  private func requestAuthorization() {
+    // Configure notifications
+    UNUserNotificationCenter
+      .current()
+      .requestAuthorization(options: [.alert, .badge, .sound]) {_,_ in
+        print("requestAuthorization")
+    }
+
+    // Configure location manager
+    guard CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) else {
+      print("Monitoring unavailable")
+      return
+    }
+
+    print("AAAA SHIT")
+
+    if CLLocationManager.authorizationStatus() != .authorizedAlways {
+      locationManager.requestAlwaysAuthorization()
+    }
+  }
+
 }

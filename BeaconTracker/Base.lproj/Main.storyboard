@@ -188,6 +188,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="passcodeTextField" destination="KQy-1o-nk7" id="voM-np-YrR"/>
                         <segue destination="bNc-1p-ypu" kind="unwind" identifier="UnwindFromPasscodeToBeacons" unwindAction="unwindToBeaconsWithSegue:" id="RSC-DQ-PRT"/>
                     </connections>
                 </viewController>

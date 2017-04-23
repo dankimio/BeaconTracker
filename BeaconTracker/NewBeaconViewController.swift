@@ -23,10 +23,6 @@ class NewBeaconViewController: UIViewController {
     // Do any additional setup after loading the view.
     locationManager.delegate = self
     locationManager.startRangingBeacons(in: region)
-
-    if true {
-      performSegue(withIdentifier: "Passcode", sender: nil)
-    }
   }
 
   @IBAction func cancel(_ sender: UIBarButtonItem) {
@@ -34,9 +30,9 @@ class NewBeaconViewController: UIViewController {
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    guard let passcodeViewController = segue.destination as? PasscodeViewController else { return }
-//    guard let beacon = sender as? CLBeacon else { return }
-//    passcodeViewController.beacon = beacon
+    guard let passcodeViewController = segue.destination as? PasscodeViewController else { return }
+    guard let beacon = sender as? CLBeacon else { return }
+    passcodeViewController.beacon = beacon
   }
 
 }
