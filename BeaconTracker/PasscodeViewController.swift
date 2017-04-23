@@ -14,28 +14,45 @@ class PasscodeViewController: UIViewController {
 
   var beacon: CLBeacon!
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    // Do any additional setup after loading the view.
-//    print(beacon.proximityUUID)
-  }
-
   @IBAction func add(_ sender: UIButton) {
-    performSegue(withIdentifier: "UnwindFromPasscodeToBeacons", sender: self)
+    //    let majorMinorString = "\(beacon.major)-\(beacon.minor)"
+        let majorMinorString = "0-0"
+        let params: [String: Any] = ["api_token": "foobar", "beacon": ["code": "1234"]]
 
-    let majorMinorString = "\(beacon.major)-\(beacon.minor)"
-    let params = ["beacon": ["code": "1234"]]
-
-    // TODO: activate the beacon on the server, save beacon on success, present alert otherwise
     Alamofire
       .request(
-        "/api/beacons/\(majorMinorString)/activation",
+        "https://beacon-tracker.herokuapp.com/api/beacons/\(majorMinorString)/activations",
         method: .post,
         parameters: params,
         encoding: JSONEncoding.default
       ).responseJSON { response in
-        print(response)
-      }
+        switch response.result {
+        case .success:
+          self.handleSuccess()
+        case .failure:
+          self.handleFailure()
+        }
+    }
+  }
+
+  private func handleSuccess() {
+    performSegue(withIdentifier: "UnwindFromPasscodeToBeacons", sender: nil)
+  }
+
+  private func handleFailure() {
+    let alertController = UIAlertController(
+      title: "Error",
+      message: "Invalid passcode",
+      preferredStyle: .alert
+    )
+
+    let defaultAction = UIAlertAction(
+      title: "OK",
+      style: .default,
+      handler: nil
+    )
+    alertController.addAction(defaultAction)
+
+    present(alertController, animated: true, completion: nil)
   }
 }

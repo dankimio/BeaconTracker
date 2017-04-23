@@ -25,7 +25,7 @@ class NewBeaconViewController: UIViewController {
     locationManager.startRangingBeacons(in: region)
 
     if true {
-      performSegue(withIdentifier: "Passcode", sender: CLBeacon())
+      performSegue(withIdentifier: "Passcode", sender: nil)
     }
   }
 
@@ -34,9 +34,9 @@ class NewBeaconViewController: UIViewController {
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    guard let passcodeViewController = segue.destination as? PasscodeViewController else { return }
-    guard let beacon = sender as? CLBeacon else { return }
-    passcodeViewController.beacon = beacon
+//    guard let passcodeViewController = segue.destination as? PasscodeViewController else { return }
+//    guard let beacon = sender as? CLBeacon else { return }
+//    passcodeViewController.beacon = beacon
   }
 
 }

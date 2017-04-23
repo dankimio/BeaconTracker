@@ -78,6 +78,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yAn-yB-iYY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bNc-1p-ypu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="852" y="91.304347826086968"/>
         </scene>
@@ -120,16 +121,15 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fR7-xa-YHX">
                             <connections>
                                 <action selector="cancel:" destination="2cx-QO-xBS" id="QIQ-3z-Wyd"/>
+                                <segue destination="bNc-1p-ypu" kind="unwind" identifier="UnwindFromNewBeaconToBeacons" unwindAction="unwindToBeaconsWithSegue:" id="r2z-ed-1CZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="E9N-Jy-IQy" kind="unwind" identifier="UnwindFromNewBeaconToBeacons" unwindAction="unwindToBeaconsWithSegue:" id="ajN-rt-otR"/>
                         <segue destination="L74-0N-ObX" kind="show" identifier="Passcode" id="CtQ-A2-c8s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="az9-WC-sJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="E9N-Jy-IQy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2569" y="90"/>
         </scene>
@@ -188,11 +188,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="MQg-TQ-L1t" kind="unwind" identifier="UnwindFromPasscodeToBeacons" unwindAction="unwindToBeaconsWithSegue:" id="8Fx-to-z6f"/>
+                        <segue destination="bNc-1p-ypu" kind="unwind" identifier="UnwindFromPasscodeToBeacons" unwindAction="unwindToBeaconsWithSegue:" id="RSC-DQ-PRT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VVO-jo-rSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="MQg-TQ-L1t" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2569" y="814"/>
         </scene>
@@ -404,7 +403,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OsE-1t-N10" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Yqw-k4-Zn8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Yqw-k4-Zn8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -427,7 +426,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V4A-jf-8KD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="6WV-79-dId">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="6WV-79-dId">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -450,7 +449,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NOc-Bc-EJu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="ET4-K3-y9h">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="ET4-K3-y9h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
