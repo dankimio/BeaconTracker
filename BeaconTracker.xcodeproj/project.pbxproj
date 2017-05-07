@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		374A18561EBFC52E006C169A /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374A18551EBFC52E006C169A /* APIPath.swift */; };
 		377555211EAD21BD004E2B4C /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377555201EAD21BD004E2B4C /* ServerManager.swift */; };
 		37A317931E75B82500BF3AEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A317921E75B82500BF3AEA /* AppDelegate.swift */; };
 		37A317951E75B82500BF3AEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A317941E75B82500BF3AEA /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		21F2E1BA33E6758666CA5AB8 /* Pods-BeaconTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconTracker/Pods-BeaconTracker.release.xcconfig"; sourceTree = "<group>"; };
+		374A18551EBFC52E006C169A /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		377555201EAD21BD004E2B4C /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		37A3178F1E75B82500BF3AEA /* BeaconTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeaconTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A317921E75B82500BF3AEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				37DDA5FA1EABD8EF00318CE2 /* Beacon.swift */,
 				37DDA5FC1EABE53D00318CE2 /* BeaconTableViewCell.swift */,
 				377555201EAD21BD004E2B4C /* ServerManager.swift */,
+				374A18551EBFC52E006C169A /* APIPath.swift */,
 			);
 			path = BeaconTracker;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				37DDA5F91EABCB5900318CE2 /* RoundedButton.swift in Sources */,
 				37DCFBD51EA9945500E43139 /* SignupViewController.swift in Sources */,
 				37DDA5FB1EABD8EF00318CE2 /* Beacon.swift in Sources */,
+				374A18561EBFC52E006C169A /* APIPath.swift in Sources */,
 				37DCFBD71EA9968A00E43139 /* NewBeaconViewController.swift in Sources */,
 				37DCFBD31EA98D3B00E43139 /* BeaconsViewController.swift in Sources */,
 				37A317931E75B82500BF3AEA /* AppDelegate.swift in Sources */,
