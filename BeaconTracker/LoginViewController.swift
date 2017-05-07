@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginViewController: UIViewController {
 
@@ -20,12 +21,41 @@ class LoginViewController: UIViewController {
   }
 
   @IBAction func logIn(_ sender: UIButton) {
-    performSegue(withIdentifier: "UnwindFromLoginToBeacons", sender: self)
+    let email = emailTextField.text!
+    let password = passwordTextField.text!
+
+    ServerManager
+      .shared
+      .authenticate(email: email, password: password) { result in
+        switch result {
+        case .success(_):
+          self.performSegue(withIdentifier: "UnwindFromLoginToBeacons", sender: self)
+        case .failure(_):
+          self.handleFailure()
+        }
+      }
   }
 
   // Resign first responder when tapped outside text field
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     view.endEditing(true)
+  }
+
+  private func handleFailure() {
+    let alertController = UIAlertController(
+      title: "Error",
+      message: "Invalid password",
+      preferredStyle: .alert
+    )
+
+    let defaultAction = UIAlertAction(
+      title: "OK",
+      style: .default,
+      handler: nil
+    )
+    alertController.addAction(defaultAction)
+
+    present(alertController, animated: true, completion: nil)
   }
 }
 

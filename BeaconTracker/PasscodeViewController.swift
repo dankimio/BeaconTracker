@@ -26,22 +26,17 @@ class PasscodeViewController: UIViewController {
     guard let passcode = passcodeTextField.text else { return }
 
     let majorMinorString = "\(beacon.major)-\(beacon.minor)"
-    let params: [String: Any] = ["api_token": "foobar", "beacon": ["passcode": passcode]]
 
-    Alamofire
-      .request(
-        "https://beacon-tracker.herokuapp.com/api/beacons/\(majorMinorString)/activations",
-        method: .post,
-        parameters: params,
-        encoding: JSONEncoding.default
-      ).responseJSON { response in
-        switch response.result {
-        case .success:
+    ServerManager
+      .shared
+      .activateBeacon(majorMinorString: majorMinorString, passcode: passcode) { result in
+        switch result {
+        case .success(_):
           self.handleSuccess()
-        case .failure:
+        case .failure(_):
           self.handleFailure()
         }
-    }
+      }
   }
 
   private func handleSuccess() {
