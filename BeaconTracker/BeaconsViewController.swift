@@ -13,6 +13,7 @@ import UserNotifications
 class BeaconsViewController: UITableViewController {
 
   let locationManager = CLLocationManager()
+  let serverManager = ServerManager.shared
 
   var beacons = [
     Beacon(name: "Bag 1", major: 0, minor: 0),
@@ -33,6 +34,15 @@ class BeaconsViewController: UITableViewController {
     // TODO: present login view if not logged in
     if true {
       performSegue(withIdentifier: "Login", sender: self)
+    }
+
+    serverManager.listBeacons() { result in
+      switch result {
+      case .success(let result):
+        print(result)
+      case .failure(let error):
+        print(error)
+      }
     }
   }
 
@@ -88,7 +98,6 @@ class BeaconsViewController: UITableViewController {
   }
 
   @IBAction func unwindToBeacons(segue: UIStoryboardSegue) {
-    print("LALKA")
   }
 
   private func requestAuthorization() {
@@ -104,8 +113,6 @@ class BeaconsViewController: UITableViewController {
       print("Monitoring unavailable")
       return
     }
-
-    print("AAAA SHIT")
 
     if CLLocationManager.authorizationStatus() != .authorizedAlways {
       locationManager.requestAlwaysAuthorization()
