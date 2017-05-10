@@ -7,4 +7,5 @@ target 'BeaconTracker' do
 
   # Pods for BeaconTracker
   pod 'Alamofire', '~> 4.4'
+  pod 'RealmSwift', '~> 2.7'
 end
