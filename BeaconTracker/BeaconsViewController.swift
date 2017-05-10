@@ -15,13 +15,7 @@ class BeaconsViewController: UITableViewController {
   let locationManager = CLLocationManager()
   let serverManager = ServerManager.shared
 
-  var beacons = [
-    Beacon(name: "Bag 1", major: 0, minor: 0),
-    Beacon(name: "Bag 2", major: 0, minor: 1),
-    Beacon(name: "Bag 3", major: 0, minor: 2),
-    Beacon(name: "Bag 4", major: 0, minor: 3),
-    Beacon(name: "Bag 5", major: 0, minor: 4)
-  ]
+  var beacons = [Beacon]()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -34,15 +28,8 @@ class BeaconsViewController: UITableViewController {
     // TODO: present login view if not logged in
     if true {
       performSegue(withIdentifier: "Login", sender: self)
-    }
-
-    serverManager.listBeacons() { result in
-      switch result {
-      case .success(let result):
-        print(result)
-      case .failure(let error):
-        print(error)
-      }
+    } else {
+      listBeacons()
     }
   }
 
@@ -62,7 +49,7 @@ class BeaconsViewController: UITableViewController {
       as! BeaconTableViewCell
     let beacon = beacons[indexPath.row]
 
-    cell.nameLabel.text = beacon.name
+    cell.nameLabel.text = "Name"
     cell.descriptionLabel.text = "Moscow, Russia – Sat, Apr 22"
     cell.enabledSwitch.isOn = false
 
@@ -81,7 +68,7 @@ class BeaconsViewController: UITableViewController {
                           forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
       // Delete the row from the data source
-      beacons.remove(at: indexPath.row)
+//      beacons.remove(at: indexPath.row)
       tableView.deleteRows(at: [indexPath], with: .fade)
     }
   }
@@ -98,6 +85,7 @@ class BeaconsViewController: UITableViewController {
   }
 
   @IBAction func unwindToBeacons(segue: UIStoryboardSegue) {
+    listBeacons()
   }
 
   private func requestAuthorization() {
@@ -116,6 +104,18 @@ class BeaconsViewController: UITableViewController {
 
     if CLLocationManager.authorizationStatus() != .authorizedAlways {
       locationManager.requestAlwaysAuthorization()
+    }
+  }
+
+  private func listBeacons() {
+    serverManager.listBeacons() { result in
+      switch result {
+      case .success(let beacons):
+        self.beacons = beacons
+        self.tableView.reloadData()
+      case .failure(_):
+        print("LOL")
+      }
     }
   }
 

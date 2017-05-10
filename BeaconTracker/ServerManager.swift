@@ -6,8 +6,8 @@
 //  Copyright © 2017 Dan Kim. All rights reserved.
 //
 
-//import enum Result.Result
 import Alamofire
+import ObjectMapper
 
 enum JSONError: Error {
   case lal
@@ -44,14 +44,15 @@ class ServerManager {
 
   // MARK: Beacons
 
-  func listBeacons(completion: @escaping (Result<String>) -> Void) {
+  func listBeacons(completion: @escaping (Result<[Beacon]>) -> Void) {
     request(path: .listBeacons, params: defaultParams)
       .responseJSON { response in
         switch response.result {
         case .success:
           let json = response.result.value! as! [Parameters]
-          print(json)
-          completion(.success("String"))
+          let beacons = json.map { Mapper<Beacon>().map(JSON: $0) }.flatMap { $0 }
+
+          completion(.success(beacons))
         case .failure:
           completion(.failure(NSError()))
         }
@@ -72,8 +73,15 @@ class ServerManager {
 
         switch response.result {
         case .success:
-          let json = response.result.value! as! Parameters
-          let beacon = Beacon(name: "Beacon", major: json["major"] as! Int, minor: json["minor"] as! Int)
+          guard let json = response.result.value! as? Parameters else {
+            completion(.failure(NSError()))
+            return
+          }
+          guard let beacon = Mapper<Beacon>().map(JSON: json) else {
+            completion(.failure(NSError()))
+            return
+          }
+
           completion(.success(beacon))
         case .failure:
           completion(.failure(NSError()))
