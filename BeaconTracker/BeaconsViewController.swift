@@ -26,7 +26,7 @@ class BeaconsViewController: UITableViewController {
     requestAuthorization()
 
     // TODO: present login view if not logged in
-    if true {
+    if false {
       performSegue(withIdentifier: "Login", sender: self)
     } else {
       listBeacons()
