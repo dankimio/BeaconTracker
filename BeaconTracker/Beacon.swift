@@ -6,16 +6,23 @@
 //  Copyright © 2017 Dan Kim. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
+import ObjectMapper
 
-class Beacon {
-  var name: String
-  var major: Int
-  var minor: Int
+class Beacon: Object, Mappable {
+  dynamic var id: Int = 0
+  dynamic var name: String = ""
+  dynamic var major: Int = 0
+  dynamic var minor: Int = 0
 
-  init(name: String, major: Int, minor: Int) {
-    self.name = name
-    self.major = major
-    self.minor = minor
+  required convenience init?(map: Map) {
+    self.init()
+  }
+
+  func mapping(map: Map) {
+    id <- map["id"]
+    name <- map["name"]
+    major <- map["major"]
+    minor <- map["minor"]
   }
 }
