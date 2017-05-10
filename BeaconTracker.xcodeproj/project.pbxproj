@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		374A18561EBFC52E006C169A /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374A18551EBFC52E006C169A /* APIPath.swift */; };
 		377555211EAD21BD004E2B4C /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377555201EAD21BD004E2B4C /* ServerManager.swift */; };
+		37813F1A1EC36C2E000C6503 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37813F191EC36C2E000C6503 /* MapKit.framework */; };
 		37A317931E75B82500BF3AEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A317921E75B82500BF3AEA /* AppDelegate.swift */; };
 		37A317951E75B82500BF3AEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A317941E75B82500BF3AEA /* ViewController.swift */; };
 		37A317981E75B82500BF3AEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A317961E75B82500BF3AEA /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		21F2E1BA33E6758666CA5AB8 /* Pods-BeaconTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconTracker/Pods-BeaconTracker.release.xcconfig"; sourceTree = "<group>"; };
 		374A18551EBFC52E006C169A /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		377555201EAD21BD004E2B4C /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		37813F191EC36C2E000C6503 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		37A3178F1E75B82500BF3AEA /* BeaconTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeaconTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A317921E75B82500BF3AEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37A317941E75B82500BF3AEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37813F1A1EC36C2E000C6503 /* MapKit.framework in Frameworks */,
 				BA73C085A3A7804165E6A35A /* Pods_BeaconTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,6 +116,7 @@
 		EF3625072C9664EEC8AFE0C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37813F191EC36C2E000C6503 /* MapKit.framework */,
 				65E8E8172E93A31DF1556024 /* Pods_BeaconTracker.framework */,
 			);
 			name = Frameworks;
@@ -155,6 +159,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = Z9SY9LHRWJ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
