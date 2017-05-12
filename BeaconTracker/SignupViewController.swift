@@ -22,9 +22,21 @@ class SignupViewController: UIViewController {
   }
 
   @IBAction func signUp(_ sender: UIButton) {
-    if validate() {
-      performSegue(withIdentifier: "UnwindFromSignupToBeacons", sender: self)
-    }
+    guard validate() else { return }
+
+    ServerManager.shared.createUser(
+      email: emailTextField.text!,
+      name: nameTextField.text!,
+      password: passwordTextField.text!,
+      completion: { result in
+        switch result {
+        case .success(_):
+          self.performSegue(withIdentifier: "UnwindFromSignupToBeacons", sender: self)
+        case .failure(_):
+          self.presentAlertController(message: "User is invalid")
+        }
+      }
+    )
   }
 
   // Resign first responder when tapped outside text field

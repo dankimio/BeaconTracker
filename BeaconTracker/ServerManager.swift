@@ -16,7 +16,7 @@ enum JSONError: Error {
 class ServerManager {
   static let shared = ServerManager()
 
-//    private let baseURL = "https://beacon-tracker.herokuapp.com/api"
+  //    private let baseURL = "https://beacon-tracker.herokuapp.com/api"
   private let baseURL = "http://localhost:3000/api"
 
   private init() {}
@@ -41,6 +41,25 @@ class ServerManager {
       }
     }
   }
+
+  func createUser(email: String,
+                  name: String,
+                  password: String,
+                  completion: @escaping (Result<Void>) -> Void) {
+    let params = [
+      "user": ["email": email, "name": name, "password": password]
+    ]
+
+    request(path: .createUser, params: params).responseJSON() { response in
+      switch response.result {
+      case .success:
+        completion(.success())
+      case .failure:
+        completion(.failure(NSError()))
+      }
+    }
+  }
+
 
   // MARK: Beacons
 
