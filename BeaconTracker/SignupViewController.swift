@@ -22,12 +22,65 @@ class SignupViewController: UIViewController {
   }
 
   @IBAction func signUp(_ sender: UIButton) {
-    performSegue(withIdentifier: "UnwindFromSignupToBeacons", sender: self)
+    if validate() {
+      performSegue(withIdentifier: "UnwindFromSignupToBeacons", sender: self)
+    }
   }
 
   // Resign first responder when tapped outside text field
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     view.endEditing(true)
+  }
+
+  private var isEmailValid: Bool {
+    do {
+      let regex = try NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}", options: .caseInsensitive)
+      return regex.firstMatch(in: emailTextField.text!, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, emailTextField.text!.characters.count)) != nil
+    } catch {
+      return false
+    }
+  }
+
+  private func validate() -> Bool {
+    guard isEmailValid else {
+      presentAlertController(message: "Email is invalid")
+      return false
+    }
+    guard nameTextField.text!.characters.count > 0 else {
+      presentAlertController(message: "Name must be present")
+      return false
+    }
+    guard passwordTextField.text! != "" else {
+      presentAlertController(message: "Password must be present")
+      return false
+    }
+    guard passwordTextField.text!.characters.count >= 6 else {
+      presentAlertController(message: "Password is too short")
+      return false
+    }
+    guard passwordTextField.text! == passwordConfirmTextField.text! else {
+      presentAlertController(message: "Passwords do not match")
+      return false
+    }
+
+    return true
+  }
+
+  private func presentAlertController(message: String) {
+    let alertController = UIAlertController(
+      title: "Error",
+      message: message,
+      preferredStyle: .alert
+    )
+
+    let defaultAction = UIAlertAction(
+      title: "OK",
+      style: .default,
+      handler: nil
+    )
+    alertController.addAction(defaultAction)
+
+    present(alertController, animated: true, completion: nil)
   }
 }
 
@@ -44,7 +97,7 @@ extension SignupViewController: UITextFieldDelegate {
     default:
       view.endEditing(true)
     }
-
+    
     return true
   }
   
