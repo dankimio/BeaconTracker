@@ -21,13 +21,23 @@ class ServerManager {
 
   private init() {}
 
-  private let defaultParams: Parameters = ["api_token": "foobar"]
+  private var defaultParams: Parameters {
+    if let apiToken = apiToken {
+      return ["api_token": apiToken]
+    } else {
+      return [:]
+    }
+  }
+
+  private var apiToken: String? {
+    return User.current?.apiToken
+  }
 
   // MARK: Users
 
   func authenticate(email: String,
                     password: String,
-                    completion: @escaping (Result<Void>) -> Void) {
+                    completion: @escaping (Result<User>) -> Void) {
     let params = [
       "user": ["email": email, "password": password]
     ]
@@ -35,7 +45,12 @@ class ServerManager {
     request(path: .authenticateUser, params: params).responseJSON() { response in
       switch response.result {
       case .success:
-        completion(.success())
+        guard let json = response.result.value as? Parameters else { return }
+        guard let user = User(json: json) else { return }
+
+        user.save()
+
+        completion(.success(user))
       case .failure:
         completion(.failure(NSError()))
       }
@@ -45,7 +60,7 @@ class ServerManager {
   func createUser(email: String,
                   name: String,
                   password: String,
-                  completion: @escaping (Result<Void>) -> Void) {
+                  completion: @escaping (Result<User>) -> Void) {
     let params = [
       "user": ["email": email, "name": name, "password": password]
     ]
@@ -53,7 +68,12 @@ class ServerManager {
     request(path: .createUser, params: params).responseJSON() { response in
       switch response.result {
       case .success:
-        completion(.success())
+        guard let json = response.result.value as? Parameters else { return }
+        guard let user = User(json: json) else { return }
+
+        user.save()
+
+        completion(.success(user))
       case .failure:
         completion(.failure(NSError()))
       }

@@ -10,6 +10,7 @@
 		374A18561EBFC52E006C169A /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374A18551EBFC52E006C169A /* APIPath.swift */; };
 		377555211EAD21BD004E2B4C /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377555201EAD21BD004E2B4C /* ServerManager.swift */; };
 		37813F1A1EC36C2E000C6503 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37813F191EC36C2E000C6503 /* MapKit.framework */; };
+		3786D1761EC8A56E00DDE4BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3786D1751EC8A56E00DDE4BB /* User.swift */; };
 		37A317931E75B82500BF3AEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A317921E75B82500BF3AEA /* AppDelegate.swift */; };
 		37A317951E75B82500BF3AEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A317941E75B82500BF3AEA /* ViewController.swift */; };
 		37A317981E75B82500BF3AEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A317961E75B82500BF3AEA /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		374A18551EBFC52E006C169A /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		377555201EAD21BD004E2B4C /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		37813F191EC36C2E000C6503 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3786D1751EC8A56E00DDE4BB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		37A3178F1E75B82500BF3AEA /* BeaconTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeaconTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A317921E75B82500BF3AEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37A317941E75B82500BF3AEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				37DDA5FC1EABE53D00318CE2 /* BeaconTableViewCell.swift */,
 				377555201EAD21BD004E2B4C /* ServerManager.swift */,
 				374A18551EBFC52E006C169A /* APIPath.swift */,
+				3786D1751EC8A56E00DDE4BB /* User.swift */,
 			);
 			path = BeaconTracker;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3786D1761EC8A56E00DDE4BB /* User.swift in Sources */,
 				37DCFBDB1EA99D6000E43139 /* PasscodeViewController.swift in Sources */,
 				37DCFBD11EA98BCC00E43139 /* LoginViewController.swift in Sources */,
 				37A317951E75B82500BF3AEA /* ViewController.swift in Sources */,
