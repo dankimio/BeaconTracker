@@ -10,6 +10,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Settings-->
+        <scene sceneID="h2J-JZ-qF7">
+            <objects>
+                <tableViewController id="c5l-da-gzM" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2eD-nG-7dD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ROJ-28-cZo">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ROJ-28-cZo" id="ckN-eO-xKg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="c5l-da-gzM" id="bpK-2I-Pag"/>
+                            <outlet property="delegate" destination="c5l-da-gzM" id="Fx3-X8-5wW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="Jvv-5V-XM6">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="qIs-hf-41T">
+                            <connections>
+                                <segue destination="w5n-d8-m8M" kind="unwind" identifier="UnwindFromSettingsToBeacons" unwindAction="unwindToBeaconsWithSegue:" id="Vbv-wd-2BH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jSy-XS-6cT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="w5n-d8-m8M" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1791.2" y="-1338.08095952024"/>
+        </scene>
         <!--Beacon-->
         <scene sceneID="OF9-9h-UPZ">
             <objects>
@@ -265,7 +301,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Beacons" id="2td-qT-gxv">
-                        <barButtonItem key="leftBarButtonItem" image="Settings" id="SkQ-bR-LQ2"/>
+                        <barButtonItem key="leftBarButtonItem" image="Settings" id="SkQ-bR-LQ2">
+                            <connections>
+                                <segue destination="oNy-En-AFf" kind="presentation" id="Y9y-cn-loB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6V1-Qp-ld0">
                             <connections>
                                 <segue destination="NOc-Bc-EJu" kind="presentation" id="oc7-6s-Ja8"/>
@@ -699,6 +739,29 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cd8-59-HYo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1672.8" y="90.404797601199405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FoR-Ut-nsf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oNy-En-AFf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="hJz-n2-80V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.70588235290000001" blue="0.80392156859999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="c5l-da-gzM" kind="relationship" relationship="rootViewController" id="ZOS-i1-kQO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MBV-fT-Uy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="-1338.08095952024"/>
         </scene>
     </scenes>
     <resources>
