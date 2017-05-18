@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372E84A31ECE4D3D0008EE5E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E84A21ECE4D3D0008EE5E /* SettingsViewController.swift */; };
 		374A18561EBFC52E006C169A /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374A18551EBFC52E006C169A /* APIPath.swift */; };
 		377555211EAD21BD004E2B4C /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377555201EAD21BD004E2B4C /* ServerManager.swift */; };
 		37813F1A1EC36C2E000C6503 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37813F191EC36C2E000C6503 /* MapKit.framework */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		21F2E1BA33E6758666CA5AB8 /* Pods-BeaconTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconTracker/Pods-BeaconTracker.release.xcconfig"; sourceTree = "<group>"; };
+		372E84A21ECE4D3D0008EE5E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		374A18551EBFC52E006C169A /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		377555201EAD21BD004E2B4C /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		37813F191EC36C2E000C6503 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -103,6 +105,7 @@
 				377555201EAD21BD004E2B4C /* ServerManager.swift */,
 				374A18551EBFC52E006C169A /* APIPath.swift */,
 				3786D1751EC8A56E00DDE4BB /* User.swift */,
+				372E84A21ECE4D3D0008EE5E /* SettingsViewController.swift */,
 			);
 			path = BeaconTracker;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				37DCFBD51EA9945500E43139 /* SignupViewController.swift in Sources */,
 				37DDA5FB1EABD8EF00318CE2 /* Beacon.swift in Sources */,
 				374A18561EBFC52E006C169A /* APIPath.swift in Sources */,
+				372E84A31ECE4D3D0008EE5E /* SettingsViewController.swift in Sources */,
 				37DCFBD71EA9968A00E43139 /* NewBeaconViewController.swift in Sources */,
 				37DCFBD31EA98D3B00E43139 /* BeaconsViewController.swift in Sources */,
 				37A317931E75B82500BF3AEA /* AppDelegate.swift in Sources */,
