@@ -21,12 +21,9 @@ class BeaconsViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem
-
     requestAuthorization()
 
-    if let currentUser = User.current {
+    if User.current != nil {
       listBeacons()
     } else {
       performSegue(withIdentifier: "Login", sender: self)

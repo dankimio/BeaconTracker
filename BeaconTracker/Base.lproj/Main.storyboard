@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OsE-1t-N10">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OsE-1t-N10">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -265,6 +265,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Beacons" id="2td-qT-gxv">
+                        <barButtonItem key="leftBarButtonItem" image="Settings" id="SkQ-bR-LQ2"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6V1-Qp-ld0">
                             <connections>
                                 <segue destination="NOc-Bc-EJu" kind="presentation" id="oc7-6s-Ja8"/>
@@ -700,4 +701,7 @@
             <point key="canvasLocation" x="1672.8" y="90.404797601199405"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Settings" width="25" height="25"/>
+    </resources>
 </document>
