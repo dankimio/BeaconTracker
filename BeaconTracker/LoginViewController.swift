@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import NotificationBannerSwift
 
 class LoginViewController: UIViewController {
 
@@ -31,7 +32,7 @@ class LoginViewController: UIViewController {
         case .success(_):
           self.performSegue(withIdentifier: "UnwindFromLoginToBeacons", sender: self)
         case .failure(_):
-          self.handleFailure()
+          self.presentBanner(message: "Invalid password")
         }
       }
   }
@@ -41,21 +42,10 @@ class LoginViewController: UIViewController {
     view.endEditing(true)
   }
 
-  private func handleFailure() {
-    let alertController = UIAlertController(
-      title: "Error",
-      message: "Invalid password",
-      preferredStyle: .alert
-    )
-
-    let defaultAction = UIAlertAction(
-      title: "OK",
-      style: .default,
-      handler: nil
-    )
-    alertController.addAction(defaultAction)
-
-    present(alertController, animated: true, completion: nil)
+  private func presentBanner(message: String) {
+    let banner = NotificationBanner(title: message, style: .danger)
+    banner.duration = 1
+    banner.show()
   }
 }
 
