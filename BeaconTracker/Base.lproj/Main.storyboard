@@ -44,6 +44,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="2c4-LU-euC" kind="show" id="7iG-ag-Sbv"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="xfP-xb-jGl" detailTextLabel="FBT-Jc-g7s" style="IBUITableViewCellStyleValue1" id="NVA-Hx-pY8">
                                         <rect key="frame" x="0.0" y="100" width="375" height="44"/>
@@ -171,6 +174,54 @@
                 <exit id="w5n-d8-m8M" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1791.2" y="-1338.08095952024"/>
+        </scene>
+        <!--Input View Controller-->
+        <scene sceneID="f4y-g3-UsH">
+            <objects>
+                <tableViewController id="2c4-LU-euC" customClass="InputViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="HAr-He-zTQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="ygm-TK-Krf">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Iwl-cf-hFH">
+                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iwl-cf-hFH" id="fFq-1Z-zEH">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Placeholder" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXX-29-S09">
+                                                    <rect key="frame" x="16" y="11" width="343" height="20"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZXX-29-S09" firstAttribute="leading" secondItem="fFq-1Z-zEH" secondAttribute="leading" constant="16" id="Hrg-rZ-935"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZXX-29-S09" secondAttribute="trailing" constant="16" id="Ukl-H6-hY2"/>
+                                                <constraint firstItem="ZXX-29-S09" firstAttribute="centerY" secondItem="fFq-1Z-zEH" secondAttribute="centerY" id="cN2-hq-odj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="2c4-LU-euC" id="J34-hK-WeZ"/>
+                            <outlet property="delegate" destination="2c4-LU-euC" id="hNv-x8-NRX"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="textField" destination="ZXX-29-S09" id="W69-q4-qRe"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7xB-iW-sNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2569" y="-1338"/>
         </scene>
         <!--Beacon-->
         <scene sceneID="OF9-9h-UPZ">

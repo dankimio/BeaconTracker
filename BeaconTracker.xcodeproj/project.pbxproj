@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		372E84A31ECE4D3D0008EE5E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E84A21ECE4D3D0008EE5E /* SettingsViewController.swift */; };
+		372E84A51ECE51620008EE5E /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E84A41ECE51620008EE5E /* InputViewController.swift */; };
 		374A18561EBFC52E006C169A /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374A18551EBFC52E006C169A /* APIPath.swift */; };
 		377555211EAD21BD004E2B4C /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377555201EAD21BD004E2B4C /* ServerManager.swift */; };
 		37813F1A1EC36C2E000C6503 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37813F191EC36C2E000C6503 /* MapKit.framework */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		21F2E1BA33E6758666CA5AB8 /* Pods-BeaconTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeaconTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeaconTracker/Pods-BeaconTracker.release.xcconfig"; sourceTree = "<group>"; };
 		372E84A21ECE4D3D0008EE5E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		372E84A41ECE51620008EE5E /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		374A18551EBFC52E006C169A /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		377555201EAD21BD004E2B4C /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		37813F191EC36C2E000C6503 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -106,6 +108,7 @@
 				374A18551EBFC52E006C169A /* APIPath.swift */,
 				3786D1751EC8A56E00DDE4BB /* User.swift */,
 				372E84A21ECE4D3D0008EE5E /* SettingsViewController.swift */,
+				372E84A41ECE51620008EE5E /* InputViewController.swift */,
 			);
 			path = BeaconTracker;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				37A317951E75B82500BF3AEA /* ViewController.swift in Sources */,
 				37DDA5FD1EABE53D00318CE2 /* BeaconTableViewCell.swift in Sources */,
 				37DDA5F91EABCB5900318CE2 /* RoundedButton.swift in Sources */,
+				372E84A51ECE51620008EE5E /* InputViewController.swift in Sources */,
 				37DCFBD51EA9945500E43139 /* SignupViewController.swift in Sources */,
 				37DDA5FB1EABD8EF00318CE2 /* Beacon.swift in Sources */,
 				374A18561EBFC52E006C169A /* APIPath.swift in Sources */,
