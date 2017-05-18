@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import UserNotifications
+import NotificationBannerSwift
 
 class BeaconsViewController: UITableViewController {
 
@@ -113,7 +114,11 @@ class BeaconsViewController: UITableViewController {
         self.beacons = beacons
         self.tableView.reloadData()
       case .failure(_):
-        print("LOL")
+        let banner = NotificationBanner(title: "Could not load beacons",
+                                        subtitle: "Try again later",
+                                        style: .danger)
+        banner.duration = 1
+        banner.show()
       }
     }
   }

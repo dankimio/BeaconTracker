@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class SignupViewController: UIViewController {
 
@@ -33,7 +34,7 @@ class SignupViewController: UIViewController {
         case .success(_):
           self.performSegue(withIdentifier: "UnwindFromSignupToBeacons", sender: self)
         case .failure(_):
-          self.presentAlertController(message: "User is invalid")
+          self.presentBanner(message: "User is invalid")
         }
       }
     )
@@ -55,44 +56,33 @@ class SignupViewController: UIViewController {
 
   private func validate() -> Bool {
     guard isEmailValid else {
-      presentAlertController(message: "Email is invalid")
+      presentBanner(message: "Email is invalid")
       return false
     }
     guard nameTextField.text!.characters.count > 0 else {
-      presentAlertController(message: "Name must be present")
+      presentBanner(message: "Name must be present")
       return false
     }
     guard passwordTextField.text! != "" else {
-      presentAlertController(message: "Password must be present")
+      presentBanner(message: "Password must be present")
       return false
     }
     guard passwordTextField.text!.characters.count >= 6 else {
-      presentAlertController(message: "Password is too short")
+      presentBanner(message: "Password is too short")
       return false
     }
     guard passwordTextField.text! == passwordConfirmTextField.text! else {
-      presentAlertController(message: "Passwords do not match")
+      presentBanner(message: "Passwords do not match")
       return false
     }
 
     return true
   }
 
-  private func presentAlertController(message: String) {
-    let alertController = UIAlertController(
-      title: "Error",
-      message: message,
-      preferredStyle: .alert
-    )
-
-    let defaultAction = UIAlertAction(
-      title: "OK",
-      style: .default,
-      handler: nil
-    )
-    alertController.addAction(defaultAction)
-
-    present(alertController, animated: true, completion: nil)
+  private func presentBanner(message: String) {
+    let banner = NotificationBanner(title: message, style: .danger)
+    banner.duration = 1
+    banner.show()
   }
 }
 
