@@ -11,4 +11,5 @@ target 'BeaconTracker' do
   pod 'RealmSwift', '~> 2.7'
   pod 'ObjectMapper', '~> 2.2'
   pod 'NotificationBannerSwift', '~> 1.2'
+  pod 'Validator', '~> 2.1'
 end
