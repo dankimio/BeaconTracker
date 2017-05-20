@@ -10,14 +10,28 @@ import UIKit
 
 class InputViewController: UITableViewController {
 
+  var inputType: InputType!
+
   @IBOutlet weak var textField: UITextField!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
-    navigationItem.title = "Title"
+    guard let user = User.current else { return }
+
+    navigationItem.title = inputType.title
+    textField.placeholder = inputType.title
+
+    switch inputType! {
+    case .email:
+      textField.text = user.email
+    case .name:
+      textField.text = user.name
+    case .password:
+      textField.isSecureTextEntry = true
+    }
+
+    textField.becomeFirstResponder()
   }
 
 }

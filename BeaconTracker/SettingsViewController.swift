@@ -21,4 +21,20 @@ class SettingsViewController: UITableViewController {
     trackingSwitch.isOn = false
   }
 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let tableViewCell = sender as? UITableViewCell else { return }
+    guard let inputViewController = segue.destination as? InputViewController else { return }
+
+    switch tableViewCell.tag {
+    case 0:
+      inputViewController.inputType = .email
+    case 1:
+      inputViewController.inputType = .name
+    case 2:
+      inputViewController.inputType = .password
+    default:
+      return
+    }
+  }
+
 }
