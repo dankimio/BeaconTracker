@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import NotificationBannerSwift
+import Validator
 
 class InputViewController: UITableViewController {
 
@@ -32,6 +34,45 @@ class InputViewController: UITableViewController {
     }
 
     textField.becomeFirstResponder()
+  }
+
+  @IBAction func save(_ sender: UIBarButtonItem) {
+    guard validate() else { return }
+
+    performSegue(withIdentifier: "UnwindFromInputToSettings", sender: self)
+  }
+
+  private func validate() -> Bool {
+    guard textField.text!.characters.count > 0 else {
+      presentBanner(message: "\(inputType.rawValue.capitalized) must be present")
+      return false
+    }
+
+    if inputType == .email {
+      let emailRule = ValidationRulePattern(pattern: EmailValidationPattern.standard,
+                                            error: ValidationError())
+      guard emailRule.validate(input: textField.text!) else {
+        presentBanner(message: "Invalid email")
+        return false
+      }
+    }
+
+    if inputType == .password {
+      let minLengthRule = ValidationRuleLength(min: 6, error: ValidationError())
+
+      guard minLengthRule.validate(input: textField.text!) else {
+        presentBanner(message: "Password is too short")
+        return false
+      }
+    }
+
+    return true
+  }
+
+  private func presentBanner(message: String) {
+    let banner = NotificationBanner(title: message, style: .danger)
+    banner.duration = 1
+    banner.show()
   }
 
 }

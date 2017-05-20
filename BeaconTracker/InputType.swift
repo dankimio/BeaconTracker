@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum InputType {
+enum InputType: String {
   case email, name, password
 
   var title: String {

@@ -37,4 +37,8 @@ class SettingsViewController: UITableViewController {
     }
   }
 
+  @IBAction func unwindToSettings(segue: UIStoryboardSegue) {
+    print("Unwind to settings")
+  }
+
 }

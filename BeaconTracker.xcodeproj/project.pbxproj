@@ -10,6 +10,7 @@
 		372E84A31ECE4D3D0008EE5E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E84A21ECE4D3D0008EE5E /* SettingsViewController.swift */; };
 		372E84A51ECE51620008EE5E /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E84A41ECE51620008EE5E /* InputViewController.swift */; };
 		372E84A71ED05EE70008EE5E /* InputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E84A61ED05EE70008EE5E /* InputType.swift */; };
+		372E84A91ED0AF4D0008EE5E /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E84A81ED0AF4D0008EE5E /* ValidationError.swift */; };
 		374A18561EBFC52E006C169A /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374A18551EBFC52E006C169A /* APIPath.swift */; };
 		377555211EAD21BD004E2B4C /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377555201EAD21BD004E2B4C /* ServerManager.swift */; };
 		37813F1A1EC36C2E000C6503 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37813F191EC36C2E000C6503 /* MapKit.framework */; };
@@ -35,6 +36,7 @@
 		372E84A21ECE4D3D0008EE5E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		372E84A41ECE51620008EE5E /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		372E84A61ED05EE70008EE5E /* InputType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputType.swift; sourceTree = "<group>"; };
+		372E84A81ED0AF4D0008EE5E /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		374A18551EBFC52E006C169A /* APIPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 		377555201EAD21BD004E2B4C /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		37813F191EC36C2E000C6503 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -112,6 +114,7 @@
 				372E84A21ECE4D3D0008EE5E /* SettingsViewController.swift */,
 				372E84A41ECE51620008EE5E /* InputViewController.swift */,
 				372E84A61ED05EE70008EE5E /* InputType.swift */,
+				372E84A81ED0AF4D0008EE5E /* ValidationError.swift */,
 			);
 			path = BeaconTracker;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372E84A91ED0AF4D0008EE5E /* ValidationError.swift in Sources */,
 				3786D1761EC8A56E00DDE4BB /* User.swift in Sources */,
 				37DCFBDB1EA99D6000E43139 /* PasscodeViewController.swift in Sources */,
 				37DCFBD11EA98BCC00E43139 /* LoginViewController.swift in Sources */,
