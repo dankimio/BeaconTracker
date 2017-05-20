@@ -63,6 +63,10 @@ class User: NSObject, NSCoding {
     userDefaults.synchronize()
   }
 
+  func logOut() {
+    UserDefaults.standard.removeObject(forKey: "currentUser")
+  }
+
   func encode(with aCoder: NSCoder) {
     aCoder.encode(id, forKey: "id")
     aCoder.encode(email, forKey: "email")

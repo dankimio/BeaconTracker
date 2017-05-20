@@ -11,9 +11,13 @@ import NotificationBannerSwift
 
 class SettingsViewController: UITableViewController {
 
+  // MARK: Outlets
+
   @IBOutlet weak var emailLabel: UILabel!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var trackingSwitch: UISwitch!
+
+  // MARK: UIViewController
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -37,6 +41,15 @@ class SettingsViewController: UITableViewController {
     }
   }
 
+  // MARK: Actions
+
+  @IBAction func logOut(_ sender: Any) {
+//    guard let user = User.current else { return }
+
+    User.current!.logOut()
+    performSegue(withIdentifier: "UnwindFromSettingsToBeacons", sender: self)
+  }
+
   @IBAction func unwindToSettings(segue: UIStoryboardSegue) {
     loadUser()
 
@@ -44,6 +57,8 @@ class SettingsViewController: UITableViewController {
     banner.duration = 1
     banner.show()
   }
+
+  // MARK: Helpers
 
   private func loadUser() {
     guard let user = User.current else { return }
