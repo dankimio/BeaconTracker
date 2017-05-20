@@ -10,8 +10,9 @@ import Foundation
 import Alamofire
 
 enum APIPath {
-  case createUser
   case showUser
+  case createUser
+  case updateUser
   case authenticateUser
   case listBeacons
   case showBeacon(majorMinor: String)
@@ -19,9 +20,11 @@ enum APIPath {
 
   var path: String {
     switch self {
+    case .showUser:
+      return "/user"
     case .createUser:
       return "/user"
-    case .showUser:
+    case .updateUser:
       return "/user"
     case .authenticateUser:
       return "/user/authenticate"
@@ -38,6 +41,8 @@ enum APIPath {
     switch self {
     case .createUser:
       return .post
+    case .updateUser:
+      return .patch
     case .authenticateUser:
       return .post
     case .activateBeacon(_):

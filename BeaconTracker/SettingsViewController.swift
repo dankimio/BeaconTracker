@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 class SettingsViewController: UITableViewController {
 
+  @IBOutlet weak var emailLabel: UILabel!
+  @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var trackingSwitch: UISwitch!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
-
-    trackingSwitch.isOn = false
+    loadUser()
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -38,7 +38,19 @@ class SettingsViewController: UITableViewController {
   }
 
   @IBAction func unwindToSettings(segue: UIStoryboardSegue) {
-    print("Unwind to settings")
+    loadUser()
+
+    let banner = NotificationBanner(title: "Profile was successfully updated", style: .success)
+    banner.duration = 1
+    banner.show()
+  }
+
+  private func loadUser() {
+    guard let user = User.current else { return }
+
+    emailLabel.text = user.email
+    nameLabel.text = user.name
+    trackingSwitch.isOn = false
   }
 
 }

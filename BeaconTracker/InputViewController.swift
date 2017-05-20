@@ -9,6 +9,7 @@
 import UIKit
 import NotificationBannerSwift
 import Validator
+import Alamofire
 
 class InputViewController: UITableViewController {
 
@@ -38,8 +39,7 @@ class InputViewController: UITableViewController {
 
   @IBAction func save(_ sender: UIBarButtonItem) {
     guard validate() else { return }
-
-    performSegue(withIdentifier: "UnwindFromInputToSettings", sender: self)
+    updateUser()
   }
 
   private func validate() -> Bool {
@@ -69,10 +69,26 @@ class InputViewController: UITableViewController {
     return true
   }
 
+  private func updateUser() {
+    let attributes = [inputType.rawValue: textField.text!]
+
+    ServerManager.shared.updateUser(
+      attributes: attributes,
+      completion: { result in
+        switch result {
+        case .success(_):
+          self.performSegue(withIdentifier: "UnwindFromInputToSettings", sender: self)
+        case .failure(_):
+          self.presentBanner(message: "Could not update user")
+        }
+      }
+    )
+  }
+
   private func presentBanner(message: String) {
     let banner = NotificationBanner(title: message, style: .danger)
     banner.duration = 1
     banner.show()
   }
-
+  
 }
