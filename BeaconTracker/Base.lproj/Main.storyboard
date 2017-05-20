@@ -181,7 +181,7 @@
             </objects>
             <point key="canvasLocation" x="1791.2" y="-1338.08095952024"/>
         </scene>
-        <!--Input View Controller-->
+        <!--Title-->
         <scene sceneID="f4y-g3-UsH">
             <objects>
                 <tableViewController id="2c4-LU-euC" customClass="InputViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -221,11 +221,20 @@
                             <outlet property="delegate" destination="2c4-LU-euC" id="hNv-x8-NRX"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="9UU-oX-esg">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="aT4-B3-QGH">
+                            <connections>
+                                <action selector="save:" destination="2c4-LU-euC" id="n9h-kA-soY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="textField" destination="ZXX-29-S09" id="W69-q4-qRe"/>
+                        <segue destination="e8r-nC-A1Y" kind="unwind" identifier="UnwindFromInputToSettings" unwindAction="unwindToSettingsWithSegue:" id="GX6-id-xH9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xB-iW-sNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="e8r-nC-A1Y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2569" y="-1338"/>
         </scene>
@@ -951,6 +960,6 @@
         <image name="Settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yjr-Kl-PEg"/>
+        <segue reference="7iG-ag-Sbv"/>
     </inferredMetricsTieBreakers>
 </document>
