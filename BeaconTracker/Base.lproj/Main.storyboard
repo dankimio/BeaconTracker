@@ -147,6 +147,9 @@
                                                     <state key="normal" title="Log Out">
                                                         <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="logOut:" destination="c5l-da-gzM" eventType="touchUpInside" id="0Vw-QU-Ahs"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

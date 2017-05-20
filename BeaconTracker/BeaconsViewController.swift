@@ -22,15 +22,20 @@ class BeaconsViewController: UITableViewController {
     super.viewDidLoad()
 
     requestAuthorization()
-
-    if User.current != nil {
-      listBeacons()
-    } else {
-      performSegue(withIdentifier: "Login", sender: self)
-    }
   }
 
-  // MARK: - Table view data source
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    guard User.current != nil else {
+      performSegue(withIdentifier: "Login", sender: self)
+      return
+    }
+
+    listBeacons()
+  }
+
+  // MARK: - Table view
 
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -81,9 +86,14 @@ class BeaconsViewController: UITableViewController {
     return true
   }
 
+  // MARK: Actions
+
   @IBAction func unwindToBeacons(segue: UIStoryboardSegue) {
+    guard User.current != nil else { return }
     listBeacons()
   }
+
+  // MARK: Helpers
 
   private func requestAuthorization() {
     // Configure notifications
