@@ -80,6 +80,28 @@ class ServerManager {
     }
   }
 
+  func updateUser(attributes: Parameters,
+                  completion: @escaping (Result<User>) -> Void) {
+    let params: Parameters = [
+      "api_token": apiToken,
+      "user": attributes
+    ]
+
+    request(path: .updateUser, params: params).responseJSON() { response in
+      switch response.result {
+      case .success:
+        guard let json = response.result.value as? Parameters else { return }
+        guard let user = User(json: json) else { return }
+
+        user.save()
+
+        completion(.success(user))
+      case .failure:
+        completion(.failure(NSError()))
+      }
+    }
+  }
+
 
   // MARK: Beacons
 

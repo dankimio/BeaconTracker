@@ -173,6 +173,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailLabel" destination="lvg-Lt-3mq" id="6ub-Q6-TRi"/>
+                        <outlet property="nameLabel" destination="FBT-Jc-g7s" id="ecn-Mq-QG6"/>
                         <outlet property="trackingSwitch" destination="1v1-Wy-VLa" id="jwP-UH-cSu"/>
                     </connections>
                 </tableViewController>
@@ -937,7 +939,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oNy-En-AFf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="hJz-n2-80V">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="hJz-n2-80V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
