@@ -13,11 +13,15 @@ enum JSONError: Error {
   case lal
 }
 
+struct ServerError: Error {
+}
+
 class ServerManager {
   static let shared = ServerManager()
 
-  //    private let baseURL = "https://beacon-tracker.herokuapp.com/api"
-  private let baseURL = "http://localhost:3000/api"
+//  private let baseURL = "https://beacon-tracker.herokuapp.com/api"
+//  private let baseURL = "http://localhost:3000/api"
+  private let baseURL = "http://192.168.0.64:3000/api"
 
   private init() {}
 
@@ -111,11 +115,22 @@ class ServerManager {
         switch response.result {
         case .success:
           let json = response.result.value as! [Parameters]
-          let beacons = json.map { Mapper<Beacon>().map(JSON: $0) }.flatMap { $0 }
+          let beacons = json
+            .map { jsonBeacon -> Beacon? in
+              guard let beacon = Mapper<Beacon>().map(JSON: jsonBeacon) else { return nil }
+
+              if let lastLocation = jsonBeacon["last_location"] as? Parameters {
+                print(lastLocation)
+                beacon.lastLocation = Mapper<Location>().map(JSON: lastLocation)
+              }
+
+              return beacon
+            }
+            .flatMap { $0 }
 
           completion(.success(beacons))
         case .failure:
-          completion(.failure(NSError()))
+          completion(.failure(ServerError()))
         }
     }
   }

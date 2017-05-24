@@ -51,9 +51,18 @@ class BeaconsViewController: UITableViewController {
       as! BeaconTableViewCell
     let beacon = beacons[indexPath.row]
 
-    cell.nameLabel.text = "Name"
-    cell.descriptionLabel.text = "Moscow, Russia – Sat, Apr 22"
-    cell.enabledSwitch.isOn = false
+    cell.nameLabel.text = beacon.name.isEmpty ? "Unnamed beacon" : beacon.name
+
+    let description: String
+
+    if let lastLocation = beacon.lastLocation {
+      description = "\(lastLocation.formattedAddress) – \(lastLocation.formattedDate)"
+    } else {
+      description = "No location data"
+    }
+
+    cell.descriptionLabel.text = description
+    cell.enabledSwitch.isOn = (beacon.status == "enabled")
 
     return cell
   }
