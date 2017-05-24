@@ -22,7 +22,11 @@ class SettingsViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    // Profile
     loadUser()
+
+    // Settings
+    trackingSwitch.isOn = Settings.instance.trackingEnabled
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,6 +46,10 @@ class SettingsViewController: UITableViewController {
   }
 
   // MARK: Actions
+
+  @IBAction func toggleTracking(_ sender: UISwitch) {
+    Settings.instance.trackingEnabled = sender.isOn
+  }
 
   @IBAction func logOut(_ sender: Any) {
 //    guard let user = User.current else { return }

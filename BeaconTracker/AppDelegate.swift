@@ -16,8 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
     NetworkActivityIndicatorManager.shared.isEnabled = true
+
+    let trackingManager = TrackingManager.shared
+
+    print("Tracking enabled: \(Settings.instance.trackingEnabled)")
+    print("Is monitoring: \(trackingManager.isMonitoring)")
+
+    if !Settings.instance.trackingEnabled && trackingManager.isMonitoring {
+      trackingManager.stopMonitoring()
+    }
+    if Settings.instance.trackingEnabled && !trackingManager.isMonitoring {
+      trackingManager.startMonitoring()
+    }
 
     return true
   }
