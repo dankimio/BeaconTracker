@@ -81,6 +81,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		378FF2801ED6197F0056BAE8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				37DCFBD01EA98BCC00E43139 /* LoginViewController.swift */,
+				37DCFBD21EA98D3B00E43139 /* BeaconsViewController.swift */,
+				37DCFBD41EA9945500E43139 /* SignupViewController.swift */,
+				37DCFBD61EA9968A00E43139 /* NewBeaconViewController.swift */,
+				37DCFBDA1EA99D6000E43139 /* PasscodeViewController.swift */,
+				372E84A21ECE4D3D0008EE5E /* SettingsViewController.swift */,
+				372E84A41ECE51620008EE5E /* InputViewController.swift */,
+				373A1D081ED4EDA600ECA669 /* LocationsViewController.swift */,
+				373A1D0C1ED5B26B00ECA669 /* BeaconViewController.swift */,
+				37AE748F1ED5FAA4005035F4 /* MapViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		378FF2811ED619A70056BAE8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37DDA5FA1EABD8EF00318CE2 /* Beacon.swift */,
+				3786D1751EC8A56E00DDE4BB /* User.swift */,
+				373A1D0A1ED5A08A00ECA669 /* Location.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		378FF2821ED619B70056BAE8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37DDA5F81EABCB5900318CE2 /* RoundedButton.swift */,
+				37DDA5FC1EABE53D00318CE2 /* BeaconTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		37A317861E75B82400BF3AEA = {
 			isa = PBXGroup;
 			children = (
@@ -102,31 +138,19 @@
 		37A317911E75B82500BF3AEA /* BeaconTracker */ = {
 			isa = PBXGroup;
 			children = (
+				378FF2811ED619A70056BAE8 /* Models */,
+				378FF2821ED619B70056BAE8 /* Views */,
+				378FF2801ED6197F0056BAE8 /* Controllers */,
 				37A317921E75B82500BF3AEA /* AppDelegate.swift */,
 				37A317941E75B82500BF3AEA /* ViewController.swift */,
 				37A317961E75B82500BF3AEA /* Main.storyboard */,
 				37A317991E75B82500BF3AEA /* Assets.xcassets */,
 				37A3179B1E75B82500BF3AEA /* LaunchScreen.storyboard */,
 				37A3179E1E75B82500BF3AEA /* Info.plist */,
-				37DCFBD01EA98BCC00E43139 /* LoginViewController.swift */,
-				37DCFBD21EA98D3B00E43139 /* BeaconsViewController.swift */,
-				37DCFBD41EA9945500E43139 /* SignupViewController.swift */,
-				37DCFBD61EA9968A00E43139 /* NewBeaconViewController.swift */,
-				37DCFBDA1EA99D6000E43139 /* PasscodeViewController.swift */,
-				37DDA5F81EABCB5900318CE2 /* RoundedButton.swift */,
-				37DDA5FA1EABD8EF00318CE2 /* Beacon.swift */,
-				37DDA5FC1EABE53D00318CE2 /* BeaconTableViewCell.swift */,
 				377555201EAD21BD004E2B4C /* ServerManager.swift */,
 				374A18551EBFC52E006C169A /* APIPath.swift */,
-				3786D1751EC8A56E00DDE4BB /* User.swift */,
-				372E84A21ECE4D3D0008EE5E /* SettingsViewController.swift */,
-				372E84A41ECE51620008EE5E /* InputViewController.swift */,
 				372E84A61ED05EE70008EE5E /* InputType.swift */,
 				372E84A81ED0AF4D0008EE5E /* ValidationError.swift */,
-				373A1D081ED4EDA600ECA669 /* LocationsViewController.swift */,
-				373A1D0A1ED5A08A00ECA669 /* Location.swift */,
-				373A1D0C1ED5B26B00ECA669 /* BeaconViewController.swift */,
-				37AE748F1ED5FAA4005035F4 /* MapViewController.swift */,
 			);
 			path = BeaconTracker;
 			sourceTree = "<group>";
