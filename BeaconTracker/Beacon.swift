@@ -14,6 +14,13 @@ class Beacon: Object, Mappable {
   dynamic var name: String = ""
   dynamic var major: Int = 0
   dynamic var minor: Int = 0
+  dynamic var status: String = ""
+
+  dynamic var lastLocation: Location?
+
+  var majorMinorString: String {
+    return "\(major)-\(minor)"
+  }
 
   required convenience init?(map: Map) {
     self.init()
@@ -24,5 +31,6 @@ class Beacon: Object, Mappable {
     name <- map["name"]
     major <- map["major"]
     minor <- map["minor"]
+    status <- map["status"]
   }
 }
