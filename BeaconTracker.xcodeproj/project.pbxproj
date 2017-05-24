@@ -23,6 +23,7 @@
 		37A317981E75B82500BF3AEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A317961E75B82500BF3AEA /* Main.storyboard */; };
 		37A3179A1E75B82500BF3AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37A317991E75B82500BF3AEA /* Assets.xcassets */; };
 		37A3179D1E75B82500BF3AEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A3179B1E75B82500BF3AEA /* LaunchScreen.storyboard */; };
+		37AE74901ED5FAA4005035F4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AE748F1ED5FAA4005035F4 /* MapViewController.swift */; };
 		37DCFBD11EA98BCC00E43139 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCFBD01EA98BCC00E43139 /* LoginViewController.swift */; };
 		37DCFBD31EA98D3B00E43139 /* BeaconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCFBD21EA98D3B00E43139 /* BeaconsViewController.swift */; };
 		37DCFBD51EA9945500E43139 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DCFBD41EA9945500E43139 /* SignupViewController.swift */; };
@@ -54,6 +55,7 @@
 		37A317991E75B82500BF3AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37A3179C1E75B82500BF3AEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37A3179E1E75B82500BF3AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37AE748F1ED5FAA4005035F4 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		37DCFBD01EA98BCC00E43139 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		37DCFBD21EA98D3B00E43139 /* BeaconsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconsViewController.swift; sourceTree = "<group>"; };
 		37DCFBD41EA9945500E43139 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				373A1D081ED4EDA600ECA669 /* LocationsViewController.swift */,
 				373A1D0A1ED5A08A00ECA669 /* Location.swift */,
 				373A1D0C1ED5B26B00ECA669 /* BeaconViewController.swift */,
+				37AE748F1ED5FAA4005035F4 /* MapViewController.swift */,
 			);
 			path = BeaconTracker;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				374A18561EBFC52E006C169A /* APIPath.swift in Sources */,
 				373A1D091ED4EDA600ECA669 /* LocationsViewController.swift in Sources */,
 				372E84A31ECE4D3D0008EE5E /* SettingsViewController.swift in Sources */,
+				37AE74901ED5FAA4005035F4 /* MapViewController.swift in Sources */,
 				37DCFBD71EA9968A00E43139 /* NewBeaconViewController.swift in Sources */,
 				373A1D0B1ED5A08A00ECA669 /* Location.swift in Sources */,
 				372E84A71ED05EE70008EE5E /* InputType.swift in Sources */,
