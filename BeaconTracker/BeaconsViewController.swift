@@ -86,6 +86,16 @@ class BeaconsViewController: UITableViewController {
     return true
   }
 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "ShowBeacon" {
+      guard let beaconViewController = segue.destination as? BeaconViewController else { return }
+      guard let cell = sender as? UITableViewCell else { return }
+      guard let indexPath = tableView.indexPath(for: cell) else { return }
+
+      beaconViewController.beacon = beacons[indexPath.row]
+    }
+  }
+
   // MARK: Actions
 
   @IBAction func unwindToBeacons(segue: UIStoryboardSegue) {
