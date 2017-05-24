@@ -521,6 +521,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mBP-Va-DTJ" kind="show" identifier="ShowLocationOnMap" id="TgS-cl-gO4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -529,12 +532,48 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Location history" id="py4-MU-Pzk">
-                        <barButtonItem key="rightBarButtonItem" image="Map" id="LoT-Ja-8mS"/>
+                        <barButtonItem key="rightBarButtonItem" image="Map" id="LoT-Ja-8mS">
+                            <connections>
+                                <segue destination="mBP-Va-DTJ" kind="show" identifier="ShowAllLocationsOnMap" id="zzW-LV-dnB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VyD-UW-evs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1791" y="-640"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="u6E-kY-rmX">
+            <objects>
+                <viewController id="mBP-Va-DTJ" customClass="MapViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hmw-A1-uBe"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Ur-Y3-kEw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h8Q-iK-mmV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Uu0-Wc-hJR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uu0-Wc-hJR" firstAttribute="leading" secondItem="h8Q-iK-mmV" secondAttribute="leading" id="ESi-6r-TZz"/>
+                            <constraint firstItem="0Ur-Y3-kEw" firstAttribute="top" secondItem="Uu0-Wc-hJR" secondAttribute="bottom" id="LfO-ue-YWt"/>
+                            <constraint firstItem="Uu0-Wc-hJR" firstAttribute="top" secondItem="Hmw-A1-uBe" secondAttribute="bottom" id="Nep-Uv-TRN"/>
+                            <constraint firstAttribute="trailing" secondItem="Uu0-Wc-hJR" secondAttribute="trailing" id="b2Y-mB-vHm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Uu0-Wc-hJR" id="HqC-kH-GuT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0BH-1D-tlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2569" y="-640"/>
         </scene>
         <!--Beacons-->
         <scene sceneID="wl9-Z6-glh">
@@ -1063,5 +1102,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7iG-ag-Sbv"/>
+        <segue reference="zzW-LV-dnB"/>
     </inferredMetricsTieBreakers>
 </document>

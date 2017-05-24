@@ -23,6 +23,22 @@ class LocationsViewController: UITableViewController {
     loadLocations()
   }
 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "ShowAllLocationsOnMap" {
+      guard let mapViewController = segue.destination as? MapViewController else { return }
+
+      mapViewController.locations = locations
+    }
+
+    if segue.identifier == "ShowLocationOnMap" {
+      guard let mapViewController = segue.destination as? MapViewController else { return }
+      guard let cell = sender as? UITableViewCell else { return }
+      guard let indexPath = tableView.indexPath(for: cell) else { return }
+
+      mapViewController.locations = [locations[indexPath.row]]
+    }
+  }
+
   // MARK: - Table view data source
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
