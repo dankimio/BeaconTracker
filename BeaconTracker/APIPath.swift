@@ -31,7 +31,7 @@ enum APIPath {
     case .listBeacons:
       return "/beacons"
     case .showBeacon(let majorMinor):
-      return "/beacon/\(majorMinor)"
+      return "/beacons/\(majorMinor)"
     case .activateBeacon(let majorMinor):
       return "/beacons/\(majorMinor)/activations"
     }

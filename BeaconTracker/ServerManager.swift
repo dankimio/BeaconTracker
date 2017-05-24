@@ -120,6 +120,34 @@ class ServerManager {
     }
   }
 
+  func showBeacon(majorMinorString: String, completion: @escaping (Result<Beacon>) -> Void) {
+    request(path: .showBeacon(majorMinor: majorMinorString), params: defaultParams)
+      .responseJSON { response in
+        switch response.result {
+        case .success:
+          let json = response.result.value! as! Parameters
+          print(json)
+
+          guard let beacon = Mapper<Beacon>().map(JSON: json) else {
+            completion(.failure(NSError()))
+            return
+          }
+
+          if let lastLocation = json["last_location"] as? Parameters {
+            print(lastLocation)
+            beacon.lastLocation = Mapper<Location>().map(JSON: lastLocation)
+            print(beacon.lastLocation)
+          }
+
+          print(beacon.lastLocation)
+
+          completion(.success(beacon))
+        case .failure:
+          completion(.failure(NSError()))
+        }
+      }
+  }
+
   func activateBeacon(majorMinorString: String,
                       passcode: String,
                       completion: @escaping (Result<Beacon>) -> Void) {

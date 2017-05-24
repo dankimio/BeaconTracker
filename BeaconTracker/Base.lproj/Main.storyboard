@@ -246,7 +246,7 @@
         <!--Beacon-->
         <scene sceneID="OF9-9h-UPZ">
             <objects>
-                <tableViewController title="Beacon" id="mvr-Hb-Mf1" sceneMemberID="viewController">
+                <tableViewController title="Beacon" id="mvr-Hb-Mf1" customClass="BeaconViewController" customModule="BeaconTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ztG-JH-qsv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,10 +264,30 @@
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-NP-6oK">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="175.5"/>
                                                 </mapView>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1m-10-DFF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No location data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIO-fR-52p">
+                                                            <rect key="frame" x="88.5" y="71" width="198" height="34"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="QIO-fR-52p" firstAttribute="centerY" secondItem="d1m-10-DFF" secondAttribute="centerY" id="VRr-k4-UZ8"/>
+                                                        <constraint firstItem="QIO-fR-52p" firstAttribute="centerX" secondItem="d1m-10-DFF" secondAttribute="centerX" id="t1Z-Ff-YFI"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="d1m-10-DFF" secondAttribute="trailing" id="QTZ-Yc-pnI"/>
+                                                <constraint firstItem="d1m-10-DFF" firstAttribute="top" secondItem="Mqa-Sx-Fta" secondAttribute="top" id="V5K-cP-cWN"/>
                                                 <constraint firstItem="dCc-NP-6oK" firstAttribute="top" secondItem="Mqa-Sx-Fta" secondAttribute="top" id="Z5D-mM-Ygl"/>
                                                 <constraint firstItem="dCc-NP-6oK" firstAttribute="leading" secondItem="Mqa-Sx-Fta" secondAttribute="leading" id="d9o-cz-SOm"/>
+                                                <constraint firstAttribute="bottom" secondItem="d1m-10-DFF" secondAttribute="bottom" id="ggT-qF-1aY"/>
+                                                <constraint firstItem="d1m-10-DFF" firstAttribute="leading" secondItem="Mqa-Sx-Fta" secondAttribute="leading" id="jed-Mw-S1p"/>
                                                 <constraint firstAttribute="bottom" secondItem="dCc-NP-6oK" secondAttribute="bottom" id="sae-Ii-qMY"/>
                                                 <constraint firstAttribute="trailing" secondItem="dCc-NP-6oK" secondAttribute="trailing" id="yao-cj-8ly"/>
                                             </constraints>
@@ -388,8 +408,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YF0-DE-abk">
-                                                    <rect key="frame" x="352" y="12" width="8" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YF0-DE-abk">
+                                                    <rect key="frame" x="349.5" y="12" width="10.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -412,8 +432,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OQu-2m-ZVq">
-                                                    <rect key="frame" x="352" y="12" width="8" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OQu-2m-ZVq">
+                                                    <rect key="frame" x="349.5" y="12" width="10.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -456,6 +476,14 @@
                             <outlet property="delegate" destination="mvr-Hb-Mf1" id="MxY-Ae-RCs"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="locationMapView" destination="dCc-NP-6oK" id="MFB-Pi-7Hd"/>
+                        <outlet property="majorValueLabel" destination="YF0-DE-abk" id="TCR-Is-fNm"/>
+                        <outlet property="minorValueLabel" destination="OQu-2m-ZVq" id="LZE-Az-yhu"/>
+                        <outlet property="notificationsSwitch" destination="Yej-a6-3En" id="5kr-Mr-Cjy"/>
+                        <outlet property="overlayView" destination="d1m-10-DFF" id="vtO-rR-sab"/>
+                        <outlet property="trackingSwitch" destination="61m-XW-stn" id="XAT-Np-pZF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqg-Y9-QPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -537,7 +565,7 @@
                                     <outlet property="descriptionLabel" destination="zs4-V0-1dO" id="aCt-eW-oof"/>
                                     <outlet property="enabledSwitch" destination="uDb-88-RCL" id="Ngi-hW-JuM"/>
                                     <outlet property="nameLabel" destination="VVq-kG-XsW" id="Jqp-zb-Rd9"/>
-                                    <segue destination="mvr-Hb-Mf1" kind="show" id="MsD-2d-snt"/>
+                                    <segue destination="mvr-Hb-Mf1" kind="show" identifier="ShowBeacon" id="MsD-2d-snt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
