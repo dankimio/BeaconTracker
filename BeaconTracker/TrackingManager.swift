@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  TrackingManager.swift
 //  BeaconTracker
 //
-//  Created by Dan Kim on 2017-03-12.
+//  Created by Dan Kim on 2017-05-25.
 //  Copyright © 2017 Dan Kim. All rights reserved.
 //
 
@@ -10,22 +10,32 @@ import UIKit
 import CoreLocation
 import UserNotifications
 
-class ViewController: UIViewController {
+class TrackingManager: NSObject {
+
+  // MARK: - Singleton
+
+  static let shared = TrackingManager()
+  override private init() {}
+
+  // MARK: - Properties
 
   let locationManager = CLLocationManager()
-
   let region = CLBeaconRegion(
     proximityUUID: UUID(uuidString: "00000000-0000-0000-0000-000000000000")!,
-    major: 1,
-    minor: 1,
     identifier: "identifier"
   )
 
   var previousProximity: CLProximity?
   var backgroundTaskIdentifier: UIBackgroundTaskIdentifier?
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  // MARK: - Computed properties
+
+  var isMonitoring: Bool {
+    return locationManager.monitoredRegions.count > 0
+  }
+
+  func startMonitoring() {
+    guard !isMonitoring else { return }
 
     // Configure notifications
     UNUserNotificationCenter
@@ -45,13 +55,17 @@ class ViewController: UIViewController {
     }
 
     region.notifyEntryStateOnDisplay = true
-
     locationManager.delegate = self
+
     locationManager.startMonitoring(for: region)
+  }
+
+  func stopMonitoring() {
+    locationManager.stopMonitoring(for: region)
   }
 }
 
-extension ViewController: CLLocationManagerDelegate {
+extension TrackingManager: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
     print(locationManager.requestState(for: region))
   }
@@ -148,4 +162,5 @@ extension ViewController: CLLocationManagerDelegate {
     case .unknown: print("unknown")
     }
   }
+
 }
