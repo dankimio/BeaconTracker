@@ -26,6 +26,10 @@ class Beacon: Object, Mappable {
     self.init()
   }
 
+  override static func primaryKey() -> String? {
+    return "id"
+  }
+
   func mapping(map: Map) {
     id <- map["id"]
     name <- map["name"]
