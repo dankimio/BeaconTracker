@@ -11,6 +11,7 @@ import NotificationBannerSwift
 import MapKit
 
 class BeaconViewController: UITableViewController {
+
   var beacon: Beacon!
 
   @IBOutlet weak var locationMapView: MKMapView!
@@ -41,6 +42,17 @@ class BeaconViewController: UITableViewController {
         }
       }
   }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "ShowLocations" {
+      guard let locationsViewController = segue.destination
+        as? LocationsViewController else { return }
+
+      locationsViewController.beacon = beacon
+    }
+  }
+
+  // MARK: - Helpers
 
   private func showBeacon() {
     if let location = beacon.lastLocation {

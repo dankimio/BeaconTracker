@@ -17,6 +17,7 @@ enum APIPath {
   case listBeacons
   case showBeacon(majorMinor: String)
   case activateBeacon(majorMinor: String)
+  case listLocations(beacon: Beacon)
 
   var path: String {
     switch self {
@@ -34,6 +35,8 @@ enum APIPath {
       return "/beacons/\(majorMinor)"
     case .activateBeacon(let majorMinor):
       return "/beacons/\(majorMinor)/activations"
+    case .listLocations(let beacon):
+      return "/beacons/\(beacon.majorMinorString)/locations"
     }
   }
 

@@ -33,7 +33,7 @@ class ServerManager {
     return User.current?.apiToken
   }
 
-  // MARK: Users
+  // MARK: - Users
 
   func authenticate(email: String,
                     password: String,
@@ -103,7 +103,7 @@ class ServerManager {
   }
 
 
-  // MARK: Beacons
+  // MARK: - Beacons
 
   func listBeacons(completion: @escaping (Result<[Beacon]>) -> Void) {
     request(path: .listBeacons, params: defaultParams)
@@ -136,10 +136,7 @@ class ServerManager {
           if let lastLocation = json["last_location"] as? Parameters {
             print(lastLocation)
             beacon.lastLocation = Mapper<Location>().map(JSON: lastLocation)
-            print(beacon.lastLocation)
           }
-
-          print(beacon.lastLocation)
 
           completion(.success(beacon))
         case .failure:
@@ -177,6 +174,25 @@ class ServerManager {
         }
     }
   }
+
+  // MARK: - Locations
+
+  func listLocations(beacon: Beacon, completion: @escaping (Result<[Location]>) -> Void) {
+    request(path: .listLocations(beacon: beacon), params: defaultParams)
+      .responseJSON { response in
+        switch response.result {
+        case .success:
+          let json = response.result.value! as! [Parameters]
+          let locations = json.map { Mapper<Location>().map(JSON: $0) }.flatMap { $0 }
+
+          completion(.success(locations))
+        case .failure:
+          completion(.failure(NSError()))
+        }
+    }
+  }
+
+  // MARK: - Helpers
 
   private func request(path: APIPath, params: Parameters? = nil) -> DataRequest {
     return Alamofire.request(
