@@ -52,6 +52,21 @@ class BeaconViewController: UITableViewController {
     }
   }
 
+  @IBAction func toggleTracking(_ sender: UISwitch) {
+    let status = (sender.isOn ? "enabled" : "disabled")
+    let attributes = ["status": status]
+
+    ServerManager.shared.updateBeacon(beacon: beacon, attributes: attributes) { result in
+      switch result {
+      case .success(_): return
+      case .failure(_):
+        let message = (sender.isOn ? "Could not enable tracking" : "Could not disable tracking")
+        self.presentBanner(message: message)
+        self.trackingSwitch.setOn(!sender.isOn, animated: true)
+      }
+    }
+  }
+
   // MARK: - Helpers
 
   private func showBeacon() {
@@ -75,6 +90,12 @@ class BeaconViewController: UITableViewController {
     let annotation = MKPointAnnotation()
     annotation.coordinate = center
     locationMapView.addAnnotation(annotation)
+  }
+
+  private func presentBanner(message: String) {
+    let banner = NotificationBanner(title: message, style: .danger)
+    banner.duration = 1
+    banner.show()
   }
 
 }

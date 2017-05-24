@@ -83,7 +83,7 @@ class ServerManager {
   func updateUser(attributes: Parameters,
                   completion: @escaping (Result<User>) -> Void) {
     let params: Parameters = [
-      "api_token": apiToken,
+      "api_token": apiToken!,
       "user": attributes
     ]
 
@@ -110,7 +110,7 @@ class ServerManager {
       .responseJSON { response in
         switch response.result {
         case .success:
-          let json = response.result.value! as! [Parameters]
+          let json = response.result.value as! [Parameters]
           let beacons = json.map { Mapper<Beacon>().map(JSON: $0) }.flatMap { $0 }
 
           completion(.success(beacons))
@@ -125,7 +125,7 @@ class ServerManager {
       .responseJSON { response in
         switch response.result {
         case .success:
-          let json = response.result.value! as! Parameters
+          let json = response.result.value as! Parameters
           print(json)
 
           guard let beacon = Mapper<Beacon>().map(JSON: json) else {
@@ -149,7 +149,7 @@ class ServerManager {
                       passcode: String,
                       completion: @escaping (Result<Beacon>) -> Void) {
     let params: Parameters = [
-      "api_token": "foobar",
+      "api_token": apiToken!,
       "beacon": ["passcode": passcode]
     ]
 
@@ -159,7 +159,37 @@ class ServerManager {
 
         switch response.result {
         case .success:
-          guard let json = response.result.value! as? Parameters else {
+          guard let json = response.result.value as? Parameters else {
+            completion(.failure(NSError()))
+            return
+          }
+          guard let beacon = Mapper<Beacon>().map(JSON: json) else {
+            completion(.failure(NSError()))
+            return
+          }
+
+          completion(.success(beacon))
+        case .failure:
+          completion(.failure(NSError()))
+        }
+    }
+  }
+
+  func updateBeacon(beacon: Beacon,
+                    attributes: Parameters,
+                    completion: @escaping (Result<Beacon>) -> Void) {
+    let params: Parameters = [
+      "api_token": apiToken!,
+      "beacon": attributes
+    ]
+
+    request(path: .updateBeacon(beacon: beacon), params: params)
+      .responseJSON { response in
+        print(response)
+
+        switch response.result {
+        case .success:
+          guard let json = response.result.value as? Parameters else {
             completion(.failure(NSError()))
             return
           }
