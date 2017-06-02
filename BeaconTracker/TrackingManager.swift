@@ -31,12 +31,12 @@ class TrackingManager: NSObject {
   // MARK: - Computed properties
 
   var isMonitoring: Bool {
+    print("Monitored regions: \(locationManager.monitoredRegions)")
+    print("Delegate: \(String(describing: locationManager.delegate))")
     return locationManager.monitoredRegions.count > 0
   }
 
   func startMonitoring() {
-    guard !isMonitoring else { return }
-
     // Configure notifications
     UNUserNotificationCenter
       .current()
@@ -50,29 +50,34 @@ class TrackingManager: NSObject {
       return
     }
 
+    // Authorize for use in the background
     if CLLocationManager.authorizationStatus() != .authorizedAlways {
       locationManager.requestAlwaysAuthorization()
     }
 
+    // Notify when the app is running
     region.notifyEntryStateOnDisplay = true
-    locationManager.delegate = self
 
+    locationManager.delegate = self
     locationManager.startMonitoring(for: region)
+
+    print("Monitoring started")
   }
 
   func stopMonitoring() {
     locationManager.stopMonitoring(for: region)
+    print("Monitoring stopped for \(region)")
   }
 }
 
 extension TrackingManager: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
-    print(locationManager.requestState(for: region))
+    print("didStartMonitoringFor, state: \(locationManager.requestState(for: region))")
   }
 
   func locationManager(_ manager: CLLocationManager,
                        didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-    print(beacons)
+    print("didRangeBeacons: \(beacons)")
 
     guard let beacon = beacons.first else { return }
 
@@ -85,6 +90,8 @@ extension TrackingManager: CLLocationManagerDelegate {
       case .near: message = "Near"
       case .unknown: message = "Unknown"
       }
+
+      print("didRangeBeacons: \(message)")
 
       let content = UNMutableNotificationContent()
       content.title = "Proximity"
@@ -122,11 +129,7 @@ extension TrackingManager: CLLocationManagerDelegate {
     // Start ranging in background
     guard let region = region as? CLBeaconRegion else { return }
 
-    backgroundTaskIdentifier = UIApplication.shared.beginBackgroundTask(
-      withName: "ranging",
-      expirationHandler: nil
-    )
-    manager.startRangingBeacons(in: region)
+    startRanging(region: region, withLocationManager: manager)
   }
 
   func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
@@ -146,10 +149,7 @@ extension TrackingManager: CLLocationManagerDelegate {
     UNUserNotificationCenter.current().add(request)
 
     // Stop background ranging
-    if let backgroundTaskIdentifier = backgroundTaskIdentifier {
-      print("Ending background task")
-      UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
-    }
+    stopRanging(region: region as! CLBeaconRegion, withLocationManager: manager)
   }
 
   func locationManager(_ manager: CLLocationManager,
@@ -157,9 +157,38 @@ extension TrackingManager: CLLocationManagerDelegate {
     print("didDetermineState: ", terminator: "")
 
     switch state {
-    case .inside: print("inside")
-    case .outside: print("outside")
+    case .inside:
+      print("inside")
+      guard let region = region as? CLBeaconRegion else { return }
+      startRanging(region: region, withLocationManager: manager)
+    case .outside:
+      print("outside")
+      guard let region = region as? CLBeaconRegion else { return }
+      stopRanging(region: region, withLocationManager: manager)
     case .unknown: print("unknown")
+    }
+  }
+
+  private func startRanging(region: CLBeaconRegion, withLocationManager manager: CLLocationManager) {
+    // Begin background task
+    backgroundTaskIdentifier = UIApplication.shared.beginBackgroundTask(
+      withName: "ranging",
+      expirationHandler: nil
+    )
+    print("Background task started")
+
+    // Start ranging beacons
+    manager.startRangingBeacons(in: region)
+  }
+
+  private func stopRanging(region: CLBeaconRegion, withLocationManager manager: CLLocationManager) {
+    // Stop ranging beacons
+    locationManager.stopRangingBeacons(in: region)
+
+    // Stop background task
+    if let backgroundTaskIdentifier = backgroundTaskIdentifier {
+      UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
+      print("Background task stopped")
     }
   }
 

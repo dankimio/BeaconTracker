@@ -19,19 +19,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+    // Alamofire: enable activity indicator
     NetworkActivityIndicatorManager.shared.isEnabled = true
+
+    print("Tracking enabled: \(Settings.instance.trackingEnabled)")
 
     let trackingManager = TrackingManager.shared
 
-    print("Tracking enabled: \(Settings.instance.trackingEnabled)")
+    trackingManager.stopMonitoring()
     print("Is monitoring: \(trackingManager.isMonitoring)")
 
-    if !Settings.instance.trackingEnabled && trackingManager.isMonitoring {
+    if Settings.instance.trackingEnabled {
+      trackingManager.startMonitoring()
+    } else {
       trackingManager.stopMonitoring()
     }
-    if Settings.instance.trackingEnabled && !trackingManager.isMonitoring {
-      trackingManager.startMonitoring()
-    }
+
+    print("Is monitoring: \(trackingManager.isMonitoring)")
 
     return true
   }
