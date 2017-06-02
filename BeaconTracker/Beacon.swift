@@ -10,6 +10,7 @@ import RealmSwift
 import ObjectMapper
 
 class Beacon: Object, Mappable {
+
   dynamic var id: Int = 0
   dynamic var name: String = ""
   dynamic var major: Int = 0

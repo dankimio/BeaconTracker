@@ -12,6 +12,7 @@ import ObjectMapper
 class Location: Object, Mappable {
 
   // MARK: - Properties
+
   dynamic var id = 0
   dynamic var latitude = 0.0
   dynamic var longitude = 0.0

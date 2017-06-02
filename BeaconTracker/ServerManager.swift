@@ -19,9 +19,9 @@ struct ServerError: Error {
 class ServerManager {
   static let shared = ServerManager()
 
-//  private let baseURL = "https://beacon-tracker.herokuapp.com/api"
+  private let baseURL = "https://beacon-tracker.herokuapp.com/api"
 //  private let baseURL = "http://localhost:3000/api"
-  private let baseURL = "http://192.168.0.64:3000/api"
+//  private let baseURL = "http://192.168.0.64:3000/api"
 
   private init() {}
 
