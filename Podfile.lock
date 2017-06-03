@@ -6,12 +6,12 @@ PODS:
   - NotificationBannerSwift (1.2.0):
     - MarqueeLabel/Swift
     - SnapKit (~> 3.2.0)
-  - ObjectMapper (2.2.6)
-  - Realm (2.7.0):
-    - Realm/Headers (= 2.7.0)
-  - Realm/Headers (2.7.0)
-  - RealmSwift (2.7.0):
-    - Realm (= 2.7.0)
+  - ObjectMapper (2.2.7)
+  - Realm (2.8.0):
+    - Realm/Headers (= 2.8.0)
+  - Realm/Headers (2.8.0)
+  - RealmSwift (2.8.0):
+    - Realm (= 2.8.0)
   - SnapKit (3.2.0)
   - Validator (2.1.1)
 
@@ -28,9 +28,9 @@ SPEC CHECKSUMS:
   AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
   MarqueeLabel: 8a25b2cf02cf52165022f01369e63536c58fcc00
   NotificationBannerSwift: 77f96e1c418309600aad70b21247d9b3cbc360e3
-  ObjectMapper: '042708195cc46c20871cbcbec0453826398273fd'
-  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
-  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
+  ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
+  Realm: 929243ad2b618b3232e70658bedc61110e7563f1
+  RealmSwift: 5b7079b891f2833d1849294161ba3e092bbda3f6
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   Validator: b1793fbfd0046097551d0edd18e2c30792d69ef5
 
