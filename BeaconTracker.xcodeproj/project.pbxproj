@@ -86,16 +86,16 @@
 		378FF2801ED6197F0056BAE8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				37DCFBD01EA98BCC00E43139 /* LoginViewController.swift */,
+				373A1D0C1ED5B26B00ECA669 /* BeaconViewController.swift */,
 				37DCFBD21EA98D3B00E43139 /* BeaconsViewController.swift */,
-				37DCFBD41EA9945500E43139 /* SignupViewController.swift */,
+				372E84A41ECE51620008EE5E /* InputViewController.swift */,
+				373A1D081ED4EDA600ECA669 /* LocationsViewController.swift */,
+				37DCFBD01EA98BCC00E43139 /* LoginViewController.swift */,
+				37AE748F1ED5FAA4005035F4 /* MapViewController.swift */,
 				37DCFBD61EA9968A00E43139 /* NewBeaconViewController.swift */,
 				37DCFBDA1EA99D6000E43139 /* PasscodeViewController.swift */,
 				372E84A21ECE4D3D0008EE5E /* SettingsViewController.swift */,
-				372E84A41ECE51620008EE5E /* InputViewController.swift */,
-				373A1D081ED4EDA600ECA669 /* LocationsViewController.swift */,
-				373A1D0C1ED5B26B00ECA669 /* BeaconViewController.swift */,
-				37AE748F1ED5FAA4005035F4 /* MapViewController.swift */,
+				37DCFBD41EA9945500E43139 /* SignupViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

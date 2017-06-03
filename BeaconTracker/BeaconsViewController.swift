@@ -10,13 +10,15 @@ import UIKit
 import CoreLocation
 import UserNotifications
 import NotificationBannerSwift
+import RealmSwift
 
 class BeaconsViewController: UITableViewController {
 
   let locationManager = CLLocationManager()
   let serverManager = ServerManager.shared
 
-  var beacons = [Beacon]()
+  let realm = try! Realm()
+  lazy var beacons = try! Realm().objects(Beacon.self)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -47,20 +49,19 @@ class BeaconsViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    // Dequeue cell
     let cell = tableView.dequeueReusableCell(withIdentifier: "BeaconCell", for: indexPath)
       as! BeaconTableViewCell
+
+    // Configure cell with beacon
     let beacon = beacons[indexPath.row]
-
     cell.nameLabel.text = beacon.name.isEmpty ? "Unnamed beacon" : beacon.name
-
     let description: String
-
     if let lastLocation = beacon.lastLocation {
       description = "\(lastLocation.formattedAddress) – \(lastLocation.formattedDate)"
     } else {
       description = "No location data"
     }
-
     cell.descriptionLabel.text = description
     cell.enabledSwitch.isOn = (beacon.status == "enabled")
 
@@ -136,8 +137,8 @@ class BeaconsViewController: UITableViewController {
   private func listBeacons() {
     serverManager.listBeacons() { result in
       switch result {
-      case .success(let beacons):
-        self.beacons = beacons
+      case .success(_):
+        self.beacons = try! Realm().objects(Beacon.self)
         self.tableView.reloadData()
       case .failure(_):
         let banner = NotificationBanner(title: "Could not load beacons",

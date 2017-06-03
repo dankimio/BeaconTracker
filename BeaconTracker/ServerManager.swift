@@ -8,6 +8,7 @@
 
 import Alamofire
 import ObjectMapper
+import RealmSwift
 
 enum JSONError: Error {
   case lal
@@ -19,8 +20,8 @@ struct ServerError: Error {
 class ServerManager {
   static let shared = ServerManager()
 
-  private let baseURL = "https://beacon-tracker.herokuapp.com/api"
-//  private let baseURL = "http://localhost:3000/api"
+//  private let baseURL = "https://beacon-tracker.herokuapp.com/api"
+  private let baseURL = "http://localhost:3000/api"
 //  private let baseURL = "http://192.168.0.64:3000/api"
 
   private init() {}
@@ -119,14 +120,20 @@ class ServerManager {
             .map { jsonBeacon -> Beacon? in
               guard let beacon = Mapper<Beacon>().map(JSON: jsonBeacon) else { return nil }
 
+
               if let lastLocation = jsonBeacon["last_location"] as? Parameters {
                 print(lastLocation)
-                beacon.lastLocation = Mapper<Location>().map(JSON: lastLocation)
+                if let lastLocation = Mapper<Location>().map(JSON: lastLocation) {
+                  beacon.lastLocation = lastLocation
+                }
               }
 
               return beacon
             }
             .flatMap { $0 }
+
+          let realm = try! Realm()
+          try! realm.write { realm.add(beacons, update: true) }
 
           completion(.success(beacons))
         case .failure:

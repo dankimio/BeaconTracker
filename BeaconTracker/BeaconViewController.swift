@@ -9,6 +9,7 @@
 import UIKit
 import NotificationBannerSwift
 import MapKit
+import RealmSwift
 
 class BeaconViewController: UITableViewController {
 
@@ -26,21 +27,7 @@ class BeaconViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    ServerManager
-      .shared
-      .showBeacon(majorMinorString: beacon.majorMinorString) { result in
-        switch result {
-        case .success(let beacon):
-          self.beacon = beacon
-          self.showBeacon()
-        case .failure(_):
-          let banner = NotificationBanner(title: "Could not load beacon",
-                                          subtitle: "Try again later",
-                                          style: .danger)
-          banner.duration = 1
-          banner.show()
-        }
-      }
+    self.showBeacon()
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
