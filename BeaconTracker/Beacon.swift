@@ -17,11 +17,19 @@ class Beacon: Object, Mappable {
   dynamic var minor: Int = 0
   dynamic var status: String = ""
 
-  dynamic var lastLocation: Location?
+  var locations = List<Location>()
+
+  // MARK: - Computed properties
+
+  var lastLocation: Location? {
+    return locations.sorted(byKeyPath: "createdAt", ascending: false).first
+  }
 
   var majorMinorString: String {
     return "\(major)-\(minor)"
   }
+
+  // MARK: - Initialization
 
   required convenience init?(map: Map) {
     self.init()

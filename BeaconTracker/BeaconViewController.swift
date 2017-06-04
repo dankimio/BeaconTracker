@@ -27,6 +27,8 @@ class BeaconViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    print(beacon)
+
     self.showBeacon()
   }
 
@@ -36,6 +38,7 @@ class BeaconViewController: UITableViewController {
         as? LocationsViewController else { return }
 
       locationsViewController.beacon = beacon
+      locationsViewController.locations = beacon.locations
     }
   }
 

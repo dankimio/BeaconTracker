@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import RealmSwift
 import NotificationBannerSwift
 
 class LocationsViewController: UITableViewController {
 
   var beacon: Beacon!
-  var locations = [Location]()
+  var locations: List<Location>!
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
+    print(beacon)
 
     loadLocations()
   }
@@ -27,7 +27,7 @@ class LocationsViewController: UITableViewController {
     if segue.identifier == "ShowAllLocationsOnMap" {
       guard let mapViewController = segue.destination as? MapViewController else { return }
 
-      mapViewController.locations = locations
+      mapViewController.locations = Array(locations)
     }
 
     if segue.identifier == "ShowLocationOnMap" {
@@ -35,7 +35,7 @@ class LocationsViewController: UITableViewController {
       guard let cell = sender as? UITableViewCell else { return }
       guard let indexPath = tableView.indexPath(for: cell) else { return }
 
-      mapViewController.locations = [locations[indexPath.row]]
+      mapViewController.locations = [Array(locations)[indexPath.row]]
     }
   }
 
@@ -65,8 +65,7 @@ class LocationsViewController: UITableViewController {
       .shared
       .listLocations(beacon: beacon) { result in
         switch result {
-        case .success(let locations):
-          self.locations = locations
+        case .success(_):
           self.tableView.reloadData()
         case .failure(_):
           let banner = NotificationBanner(title: "Could not load location history",

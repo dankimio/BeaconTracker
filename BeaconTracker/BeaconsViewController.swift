@@ -23,6 +23,8 @@ class BeaconsViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    print(beacons)
+
     requestAuthorization()
   }
 
@@ -138,7 +140,6 @@ class BeaconsViewController: UITableViewController {
     serverManager.listBeacons() { result in
       switch result {
       case .success(_):
-        self.beacons = try! Realm().objects(Beacon.self)
         self.tableView.reloadData()
       case .failure(_):
         let banner = NotificationBanner(title: "Could not load beacons",

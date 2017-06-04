@@ -49,15 +49,15 @@ class ServerManager {
 
     request(path: .authenticateUser, params: params).responseJSON() { response in
       switch response.result {
-      case .success:
-        guard let json = response.result.value as? Parameters else { return }
+      case .success(let value):
+        guard let json = value as? Parameters else { return }
         guard let user = User(json: json) else { return }
 
         user.save()
 
         completion(.success(user))
-      case .failure:
-        completion(.failure(NSError()))
+      case .failure(let error):
+        completion(.failure(error))
       }
     }
   }
@@ -72,15 +72,15 @@ class ServerManager {
 
     request(path: .createUser, params: params).responseJSON() { response in
       switch response.result {
-      case .success:
-        guard let json = response.result.value as? Parameters else { return }
+      case .success(let value):
+        guard let json = value as? Parameters else { return }
         guard let user = User(json: json) else { return }
 
         user.save()
 
         completion(.success(user))
-      case .failure:
-        completion(.failure(NSError()))
+      case .failure(let error):
+        completion(.failure(error))
       }
     }
   }
@@ -94,15 +94,15 @@ class ServerManager {
 
     request(path: .updateUser, params: params).responseJSON() { response in
       switch response.result {
-      case .success:
-        guard let json = response.result.value as? Parameters else { return }
+      case .success(let value):
+        guard let json = value as? Parameters else { return }
         guard let user = User(json: json) else { return }
 
         user.save()
 
         completion(.success(user))
-      case .failure:
-        completion(.failure(NSError()))
+      case .failure(let error):
+        completion(.failure(error))
       }
     }
   }
@@ -114,57 +114,35 @@ class ServerManager {
     request(path: .listBeacons, params: defaultParams)
       .responseJSON { response in
         switch response.result {
-        case .success:
-          let json = response.result.value as! [Parameters]
+        case .success(let value):
+          guard let json = value as? [Parameters] else { return }
+
+          let realm = try! Realm()
+
+          realm.beginWrite()
+
           let beacons = json
-            .map { jsonBeacon -> Beacon? in
+            .flatMap { jsonBeacon -> Beacon? in
               guard let beacon = Mapper<Beacon>().map(JSON: jsonBeacon) else { return nil }
 
+              realm.add(beacon, update: true)
 
-              if let lastLocation = jsonBeacon["last_location"] as? Parameters {
-                print(lastLocation)
-                if let lastLocation = Mapper<Location>().map(JSON: lastLocation) {
-                  beacon.lastLocation = lastLocation
-                }
+              if let lastLocationJSON = jsonBeacon["last_location"] as? Parameters,
+                let lastLocation = Mapper<Location>().map(JSON: lastLocationJSON) {
+                realm.add(lastLocation, update: true)
+                beacon.locations.append(lastLocation)
               }
 
               return beacon
             }
-            .flatMap { $0 }
 
-          let realm = try! Realm()
-          try! realm.write { realm.add(beacons, update: true) }
+          try! realm.commitWrite()
 
           completion(.success(beacons))
-        case .failure:
-          completion(.failure(ServerError()))
+        case .failure(let error):
+          completion(.failure(error))
         }
     }
-  }
-
-  func showBeacon(majorMinorString: String, completion: @escaping (Result<Beacon>) -> Void) {
-    request(path: .showBeacon(majorMinor: majorMinorString), params: defaultParams)
-      .responseJSON { response in
-        switch response.result {
-        case .success:
-          let json = response.result.value as! Parameters
-          print(json)
-
-          guard let beacon = Mapper<Beacon>().map(JSON: json) else {
-            completion(.failure(NSError()))
-            return
-          }
-
-          if let lastLocation = json["last_location"] as? Parameters {
-            print(lastLocation)
-            beacon.lastLocation = Mapper<Location>().map(JSON: lastLocation)
-          }
-
-          completion(.success(beacon))
-        case .failure:
-          completion(.failure(NSError()))
-        }
-      }
   }
 
   func activateBeacon(majorMinorString: String,
@@ -180,8 +158,8 @@ class ServerManager {
         print(response)
 
         switch response.result {
-        case .success:
-          guard let json = response.result.value as? Parameters else {
+        case .success(let value):
+          guard let json = value as? Parameters else {
             completion(.failure(NSError()))
             return
           }
@@ -191,8 +169,8 @@ class ServerManager {
           }
 
           completion(.success(beacon))
-        case .failure:
-          completion(.failure(NSError()))
+        case .failure(let error):
+          completion(.failure(error))
         }
     }
   }
@@ -210,8 +188,8 @@ class ServerManager {
         print(response)
 
         switch response.result {
-        case .success:
-          guard let json = response.result.value as? Parameters else {
+        case .success(let value):
+          guard let json = value as? Parameters else {
             completion(.failure(NSError()))
             return
           }
@@ -221,8 +199,8 @@ class ServerManager {
           }
 
           completion(.success(beacon))
-        case .failure:
-          completion(.failure(NSError()))
+        case .failure(let error):
+          completion(.failure(error))
         }
     }
   }
@@ -233,9 +211,19 @@ class ServerManager {
     request(path: .listLocations(beacon: beacon), params: defaultParams)
       .responseJSON { response in
         switch response.result {
-        case .success:
-          let json = response.result.value! as! [Parameters]
-          let locations = json.map { Mapper<Location>().map(JSON: $0) }.flatMap { $0 }
+        case .success(let value):
+          let json = value as! [Parameters]
+          let locations = json.flatMap { Mapper<Location>().map(JSON: $0) }
+
+          let realm = try! Realm()
+          try! realm.write {
+            // Clean up beacon's locations
+            realm.delete(beacon.locations)
+
+            // Persist new locations and assign to the beacon
+            realm.add(locations, update: true)
+            beacon.locations.append(objectsIn: locations)
+          }
 
           completion(.success(locations))
         case .failure:
