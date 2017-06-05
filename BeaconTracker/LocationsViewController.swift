@@ -58,12 +58,20 @@ class LocationsViewController: UITableViewController {
     return cell
   }
 
+  // MARK: - Actions
+
+  @IBAction func refreshTableView(_ sender: UIRefreshControl) {
+    loadLocations()
+  }
+
   // MARK: - Helpers
 
   func loadLocations() {
     ServerManager
       .shared
       .listLocations(beacon: beacon) { result in
+        self.tableView.refreshControl?.endRefreshing()
+
         switch result {
         case .success(_):
           self.tableView.reloadData()

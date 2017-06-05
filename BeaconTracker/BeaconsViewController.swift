@@ -115,6 +115,10 @@ class BeaconsViewController: UITableViewController {
     listBeacons()
   }
 
+  @IBAction func refreshTableView(_ sender: UIRefreshControl) {
+    listBeacons()
+  }
+
   // MARK: Helpers
 
   private func requestAuthorization() {
@@ -138,6 +142,8 @@ class BeaconsViewController: UITableViewController {
 
   private func listBeacons() {
     serverManager.listBeacons() { result in
+      self.refreshControl?.endRefreshing()
+
       switch result {
       case .success(_):
         self.tableView.reloadData()
