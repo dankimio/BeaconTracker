@@ -20,6 +20,7 @@
 		3786D1761EC8A56E00DDE4BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3786D1751EC8A56E00DDE4BB /* User.swift */; };
 		378FF2841ED635C80056BAE8 /* TrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378FF2831ED635C80056BAE8 /* TrackingManager.swift */; };
 		378FF2861ED63A870056BAE8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378FF2851ED63A870056BAE8 /* Settings.swift */; };
+		378FF6471EE46F1200291052 /* DetectedBeacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378FF6461EE46F1200291052 /* DetectedBeacon.swift */; };
 		37A317931E75B82500BF3AEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A317921E75B82500BF3AEA /* AppDelegate.swift */; };
 		37A317981E75B82500BF3AEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A317961E75B82500BF3AEA /* Main.storyboard */; };
 		37A3179A1E75B82500BF3AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37A317991E75B82500BF3AEA /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		3786D1751EC8A56E00DDE4BB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		378FF2831ED635C80056BAE8 /* TrackingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingManager.swift; sourceTree = "<group>"; };
 		378FF2851ED63A870056BAE8 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		378FF6461EE46F1200291052 /* DetectedBeacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedBeacon.swift; sourceTree = "<group>"; };
 		37A3178F1E75B82500BF3AEA /* BeaconTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeaconTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A317921E75B82500BF3AEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37A317971E75B82500BF3AEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				37DDA5FA1EABD8EF00318CE2 /* Beacon.swift */,
 				3786D1751EC8A56E00DDE4BB /* User.swift */,
 				373A1D0A1ED5A08A00ECA669 /* Location.swift */,
+				378FF6461EE46F1200291052 /* DetectedBeacon.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				372E84A91ED0AF4D0008EE5E /* ValidationError.swift in Sources */,
 				3786D1761EC8A56E00DDE4BB /* User.swift in Sources */,
 				37DCFBDB1EA99D6000E43139 /* PasscodeViewController.swift in Sources */,
+				378FF6471EE46F1200291052 /* DetectedBeacon.swift in Sources */,
 				37DCFBD11EA98BCC00E43139 /* LoginViewController.swift in Sources */,
 				378FF2841ED635C80056BAE8 /* TrackingManager.swift in Sources */,
 				37DDA5FD1EABE53D00318CE2 /* BeaconTableViewCell.swift in Sources */,

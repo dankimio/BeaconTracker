@@ -9,6 +9,7 @@
 import Foundation
 
 class User: NSObject, NSCoding {
+
   var id: Int
   var email: String
   var name: String
@@ -73,4 +74,5 @@ class User: NSObject, NSCoding {
     aCoder.encode(name, forKey: "name")
     aCoder.encode(apiToken, forKey: "apiToken")
   }
+
 }

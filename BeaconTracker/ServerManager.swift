@@ -20,8 +20,8 @@ struct ServerError: Error {
 class ServerManager {
   static let shared = ServerManager()
 
-//  private let baseURL = "https://beacon-tracker.herokuapp.com/api"
-  private let baseURL = "http://localhost:3000/api"
+  private let baseURL = "https://beacon-tracker.herokuapp.com/api"
+//  private let baseURL = "http://localhost:3000/api"
 //  private let baseURL = "http://192.168.0.64:3000/api"
 
   private init() {}
@@ -230,6 +230,27 @@ class ServerManager {
           completion(.failure(NSError()))
         }
     }
+  }
+
+  func createLocation(detectedBeacon: DetectedBeacon,
+                      completion: @escaping (Result<Void>) -> Void) {
+
+    let params: Parameters = [
+      "api_token": apiToken!,
+      "location": ["latitude": detectedBeacon.latitude, "longitude": detectedBeacon.longitude]
+    ]
+
+    request(path: .createLocation(detectedBeacon: detectedBeacon), params: params)
+      .responseJSON { response in
+        switch response.result {
+        case .success(_):
+          let realm = try! Realm()
+          try! realm.write { detectedBeacon.isSynced = true }
+          completion(.success())
+        case .failure(let error):
+          completion(.failure(error))
+        }
+      }
   }
 
   // MARK: - Helpers
