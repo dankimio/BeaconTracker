@@ -195,7 +195,17 @@ extension TrackingManager: CLLocationManagerDelegate {
       }
 
       print("didRangeBeacons: \(message)")
-      notify(title: "Proximity", body: message, identifier: "beaconProximityChanged")
+
+      let realm = try! Realm()
+      let shouldNotify = realm
+        .objects(Beacon.self)
+        .filter("major = %@ AND minor = %@", beacon.major, beacon.minor)
+        .count > 0
+
+      print("shouldNotify: \(shouldNotify)")
+      if shouldNotify {
+        notify(title: "Proximity", body: message, identifier: "beaconProximityChanged")
+      }
 
       if beacon.proximity == .unknown {
         let detectedBeacon = DetectedBeacon()
