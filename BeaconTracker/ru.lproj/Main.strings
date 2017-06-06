@@ -1,0 +1,156 @@
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "0fA-fd-3NL"; */
+"0fA-fd-3NL.text" = "Пароль";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "2J1-Zc-cJ9"; */
+"2J1-Zc-cJ9.text" = "Subtitle";
+
+/* Class = "UINavigationItem"; title = "Beacons"; ObjectID = "2td-qT-gxv"; */
+"2td-qT-gxv.title" = "Маячки";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "2yx-VM-e27"; */
+"2yx-VM-e27.text" = "Title";
+
+/* Class = "UITableViewSection"; headerTitle = "General"; ObjectID = "4Lj-Zi-2ng"; */
+"4Lj-Zi-2ng.headerTitle" = "Основные";
+
+/* Class = "UILabel"; text = "Don't have an account?"; ObjectID = "6m9-2c-vbf"; */
+"6m9-2c-vbf.text" = "Нет аккаунта?";
+
+/* Class = "UITextField"; placeholder = "Confirm password"; ObjectID = "6n3-Ey-Gu6"; */
+"6n3-Ey-Gu6.placeholder" = "Подтверждение пароля";
+
+/* Class = "UITableViewSection"; headerTitle = "Info"; ObjectID = "7Pp-2b-86g"; */
+"7Pp-2b-86g.headerTitle" = "Информация";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "9UU-oX-esg"; */
+"9UU-oX-esg.title" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "AUC-wQ-6Cr"; */
+"AUC-wQ-6Cr.normalTitle" = "Удалить";
+
+/* Class = "UITableViewSection"; headerTitle = "Settings"; ObjectID = "AoR-we-maa"; */
+"AoR-we-maa.headerTitle" = "Настройки";
+
+/* Class = "UILabel"; text = "Dan"; ObjectID = "FBT-Jc-g7s"; */
+"FBT-Jc-g7s.text" = "Dan";
+
+/* Class = "UITableViewSection"; headerTitle = "Profile"; ObjectID = "FRy-v1-aBm"; */
+"FRy-v1-aBm.headerTitle" = "Профиль";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "FZk-Qh-oZk"; */
+"FZk-Qh-oZk.placeholder" = "Пароль";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "HUy-fm-CyR"; */
+"HUy-fm-CyR.normalTitle" = "Войти";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "I6X-Tk-zKe"; */
+"I6X-Tk-zKe.placeholder" = "Пароль";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "JgY-nZ-a9P"; */
+"JgY-nZ-a9P.placeholder" = "Имя";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "Jvv-5V-XM6"; */
+"Jvv-5V-XM6.title" = "Настройки";
+
+/* Class = "UITextField"; placeholder = "Passcode"; ObjectID = "KQy-1o-nk7"; */
+"KQy-1o-nk7.placeholder" = "ПИН-код";
+
+/* Class = "UIViewController"; title = "Enter Passcode"; ObjectID = "L74-0N-ObX"; */
+"L74-0N-ObX.title" = "Введите ПИН-код";
+
+/* Class = "UINavigationItem"; title = "Add Beacon"; ObjectID = "Lin-cP-dJa"; */
+"Lin-cP-dJa.title" = "Новый маячок";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "OQu-2m-ZVq"; */
+"OQu-2m-ZVq.text" = "0";
+
+/* Class = "UILabel"; text = "Come close to your bag"; ObjectID = "P67-Ua-5a7"; */
+"P67-Ua-5a7.text" = "Подойдите ближе к маячку";
+
+/* Class = "UILabel"; text = "No location data"; ObjectID = "QIO-fR-52p"; */
+"QIO-fR-52p.text" = "Нет данных";
+
+/* Class = "UILabel"; text = "Baggage"; ObjectID = "VVq-kG-XsW"; */
+"VVq-kG-XsW.text" = "Baggage";
+
+/* Class = "UINavigationItem"; title = "Log In"; ObjectID = "Y2N-pN-cpK"; */
+"Y2N-pN-cpK.title" = "Войти";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "YF0-DE-abk"; */
+"YF0-DE-abk.text" = "0";
+
+/* Class = "UILabel"; text = "Tracking"; ObjectID = "YVo-UH-EBd"; */
+"YVo-UH-EBd.text" = "Отслеживание";
+
+/* Class = "UILabel"; text = "Location history"; ObjectID = "Ysk-EA-kUd"; */
+"Ysk-EA-kUd.text" = "История местоположений";
+
+/* Class = "UILabel"; text = "Major value"; ObjectID = "ZIB-CJ-ZDp"; */
+"ZIB-CJ-ZDp.text" = "Major";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "ZM4-Xg-F5w"; */
+"ZM4-Xg-F5w.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Placeholder"; ObjectID = "ZXX-29-S09"; */
+"ZXX-29-S09.placeholder" = "Placeholder";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "a7v-1N-LWF"; */
+"a7v-1N-LWF.text" = "Email";
+
+/* Class = "UILabel"; text = "Tracking"; ObjectID = "c3c-Gf-bqp"; */
+"c3c-Gf-bqp.text" = "Отслеживание";
+
+/* Class = "UILabel"; text = "******"; ObjectID = "cIl-TF-blR"; */
+"cIl-TF-blR.text" = "******";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "cJB-WE-Lcp"; */
+"cJB-WE-Lcp.normalTitle" = "Зарегистрироваться";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "dKd-Fk-ML5"; */
+"dKd-Fk-ML5.normalTitle" = "Отправить";
+
+/* Class = "UITableViewSection"; headerTitle = "Last Known Location"; ObjectID = "fTg-ef-jvO"; */
+"fTg-ef-jvO.headerTitle" = "Последнее местоположение";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "glP-Rb-gf4"; */
+"glP-Rb-gf4.normalTitle" = "Зарегистрироваться";
+
+/* Class = "UITableViewController"; title = "Location history"; ObjectID = "l7C-fp-A5h"; */
+"l7C-fp-A5h.title" = "История местоположений";
+
+/* Class = "UILabel"; text = "foo@bar.com"; ObjectID = "lvg-Lt-3mq"; */
+"lvg-Lt-3mq.text" = "foo@bar.com";
+
+/* Class = "UILabel"; text = "UUID"; ObjectID = "mAb-AL-0J1"; */
+"mAb-AL-0J1.text" = "UUID";
+
+/* Class = "UILabel"; text = "Notifications"; ObjectID = "mKw-PE-oDn"; */
+"mKw-PE-oDn.text" = "Уведомления";
+
+/* Class = "UITableViewController"; title = "Beacon"; ObjectID = "mvr-Hb-Mf1"; */
+"mvr-Hb-Mf1.title" = "Beacon";
+
+/* Class = "UINavigationItem"; title = "Location history"; ObjectID = "py4-MU-Pzk"; */
+"py4-MU-Pzk.title" = "История местоположений";
+
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "r7E-yv-WlC"; */
+"r7E-yv-WlC.normalTitle" = "Выйти";
+
+/* Class = "UILabel"; text = "00000000-0000-0000-0000-000000000000"; ObjectID = "u44-Cc-RcT"; */
+"u44-Cc-RcT.text" = "00000000-0000-0000-0000-000000000000";
+
+/* Class = "UIViewController"; title = "Sign Up"; ObjectID = "vAR-Y6-vDX"; */
+"vAR-Y6-vDX.title" = "Зарегистрироваться";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "xfP-xb-jGl"; */
+"xfP-xb-jGl.text" = "Имя";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "y1x-Kb-9g1"; */
+"y1x-Kb-9g1.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Minor value"; ObjectID = "zVX-fc-KYf"; */
+"zVX-fc-KYf.text" = "Minor";
+
+/* Class = "UILabel"; text = "Moscow, Russia – Fri, Apr 21"; ObjectID = "zs4-V0-1dO"; */
+"zs4-V0-1dO.text" = "Москва, Россия – Чт, Июн 8";
