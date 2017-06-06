@@ -73,8 +73,14 @@ class ServerManager {
     request(path: .createUser, params: params).responseJSON() { response in
       switch response.result {
       case .success(let value):
-        guard let json = value as? Parameters else { return }
-        guard let user = User(json: json) else { return }
+        guard let json = value as? Parameters else {
+          completion(.failure(ServerError()))
+          return
+        }
+        guard let user = User(json: json) else {
+          completion(.failure(ServerError()))
+          return
+        }
 
         user.save()
 
@@ -256,12 +262,14 @@ class ServerManager {
   // MARK: - Helpers
 
   private func request(path: APIPath, params: Parameters? = nil) -> DataRequest {
-    return Alamofire.request(
-      baseURL + path.path,
-      method: path.method,
-      parameters: params,
-      encoding: (path.method == .get) ? URLEncoding.default : JSONEncoding.default
-    )
+    return Alamofire
+      .request(
+        baseURL + path.path,
+        method: path.method,
+        parameters: params,
+        encoding: (path.method == .get) ? URLEncoding.default : JSONEncoding.default
+      )
+      .validate()
   }
   
 }
