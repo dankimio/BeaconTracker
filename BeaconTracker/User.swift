@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class User: NSObject, NSCoding {
 
@@ -66,6 +67,9 @@ class User: NSObject, NSCoding {
 
   func logOut() {
     UserDefaults.standard.removeObject(forKey: "currentUser")
+
+    let realm = try! Realm()
+    try! realm.write { realm.deleteAll() }
   }
 
   func encode(with aCoder: NSCoder) {
