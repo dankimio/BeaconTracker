@@ -20,8 +20,8 @@ struct ServerError: Error {
 class ServerManager {
   static let shared = ServerManager()
 
-//  private let baseURL = "https://beacon-tracker.herokuapp.com/api"
-  private let baseURL = "http://localhost:3000/api"
+  private let baseURL = "https://beacon-tracker.herokuapp.com/api"
+//  private let baseURL = "http://localhost:3000/api"
 //  private let baseURL = "http://192.168.0.64:3000/api"
 
   private init() {}
@@ -124,14 +124,15 @@ class ServerManager {
           guard let json = value as? [Parameters] else { return }
 
           let realm = try! Realm()
-
           realm.beginWrite()
 
           let beacons = json
             .flatMap { jsonBeacon -> Beacon? in
               guard let beacon = Mapper<Beacon>().map(JSON: jsonBeacon) else { return nil }
 
-              realm.add(beacon, update: true)
+              if realm.object(ofType: Beacon.self, forPrimaryKey: beacon.id) == nil {
+                realm.add(beacon, update: true)
+              }
 
               if let lastLocationJSON = jsonBeacon["last_location"] as? Parameters,
                 let lastLocation = Mapper<Location>().map(JSON: lastLocationJSON) {
