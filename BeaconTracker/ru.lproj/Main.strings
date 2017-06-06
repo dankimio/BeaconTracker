@@ -107,7 +107,7 @@
 /* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "cJB-WE-Lcp"; */
 "cJB-WE-Lcp.normalTitle" = "Зарегистрироваться";
 
-/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "dKd-Fk-ML5"; */
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "dKd-Fk-ML5"; */
 "dKd-Fk-ML5.normalTitle" = "Отправить";
 
 /* Class = "UITableViewSection"; headerTitle = "Last Known Location"; ObjectID = "fTg-ef-jvO"; */
@@ -154,3 +154,15 @@
 
 /* Class = "UILabel"; text = "Moscow, Russia – Fri, Apr 21"; ObjectID = "zs4-V0-1dO"; */
 "zs4-V0-1dO.text" = "Москва, Россия – Чт, Июн 8";
+
+/* Class = "UINavigationItem"; title = "Beacon name"; ObjectID = "A6d-3j-KFp"; */
+"A6d-3j-KFp.title" = "Название";
+
+/* Class = "UILabel"; text = "My bag"; ObjectID = "EHi-Yg-Zye"; */
+"EHi-Yg-Zye.text" = "";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Tkj-sF-jIw"; */
+"Tkj-sF-jIw.text" = "Название";
+
+/* Class = "UITextField"; placeholder = "Beacon name"; ObjectID = "d9B-nR-37G"; */
+"d9B-nR-37G.placeholder" = "Название";
