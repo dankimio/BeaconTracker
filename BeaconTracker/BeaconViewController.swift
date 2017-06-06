@@ -60,6 +60,12 @@ class BeaconViewController: UITableViewController {
   // MARK: - Helpers
 
   private func showBeacon() {
+    if beacon.name.isEmpty {
+      navigationItem.title = NSLocalizedString("beacon.unnamed", comment: "Unnamed beacon")
+    } else {
+      navigationItem.title = beacon.name
+    }
+
     if let location = beacon.lastLocation {
       showLocation(location)
     } else {

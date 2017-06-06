@@ -57,7 +57,12 @@ class BeaconsViewController: UITableViewController {
 
     // Configure cell with beacon
     let beacon = beacons[indexPath.row]
-    cell.nameLabel.text = beacon.name.isEmpty ? "Unnamed beacon" : beacon.name
+    if beacon.name.isEmpty {
+      cell.nameLabel.text = NSLocalizedString("beacon.unnamed", comment: "Unnamed beacon")
+    } else {
+      cell.nameLabel.text = beacon.name
+    }
+
     let description: String
     if let lastLocation = beacon.lastLocation {
       description = "\(lastLocation.formattedAddress) – \(lastLocation.formattedDate)"

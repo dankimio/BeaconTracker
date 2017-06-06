@@ -46,3 +46,6 @@
 
 /* Password */
 "user.attributes.password" = "Password";
+
+/* Unnamed beacon */
+"beacon.unnamed" = "Unnamed beacon";

@@ -46,3 +46,6 @@
 
 /* Password */
 "user.attributes.password" = "Пароль";
+
+/* Unnamed beacon */
+"beacon.unnamed" = "Без имени";

@@ -46,4 +46,5 @@ class Beacon: Object, Mappable {
     minor <- map["minor"]
     status <- map["status"]
   }
+
 }
