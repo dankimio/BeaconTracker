@@ -11,6 +11,7 @@
 		372E84A51ECE51620008EE5E /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E84A41ECE51620008EE5E /* InputViewController.swift */; };
 		372E84A71ED05EE70008EE5E /* InputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E84A61ED05EE70008EE5E /* InputType.swift */; };
 		372E84A91ED0AF4D0008EE5E /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E84A81ED0AF4D0008EE5E /* ValidationError.swift */; };
+		372FDA461EE73E2100EF2F97 /* EditBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372FDA451EE73E2100EF2F97 /* EditBeaconViewController.swift */; };
 		373A1D091ED4EDA600ECA669 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373A1D081ED4EDA600ECA669 /* LocationsViewController.swift */; };
 		373A1D0B1ED5A08A00ECA669 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373A1D0A1ED5A08A00ECA669 /* Location.swift */; };
 		373A1D0D1ED5B26C00ECA669 /* BeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373A1D0C1ED5B26B00ECA669 /* BeaconViewController.swift */; };
@@ -44,6 +45,7 @@
 		372E84A41ECE51620008EE5E /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		372E84A61ED05EE70008EE5E /* InputType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputType.swift; sourceTree = "<group>"; };
 		372E84A81ED0AF4D0008EE5E /* ValidationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		372FDA451EE73E2100EF2F97 /* EditBeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBeaconViewController.swift; sourceTree = "<group>"; };
 		373A1D081ED4EDA600ECA669 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		373A1D0A1ED5A08A00ECA669 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		373A1D0C1ED5B26B00ECA669 /* BeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				373A1D0C1ED5B26B00ECA669 /* BeaconViewController.swift */,
 				37DCFBD21EA98D3B00E43139 /* BeaconsViewController.swift */,
+				372FDA451EE73E2100EF2F97 /* EditBeaconViewController.swift */,
 				372E84A41ECE51620008EE5E /* InputViewController.swift */,
 				373A1D081ED4EDA600ECA669 /* LocationsViewController.swift */,
 				37DCFBD01EA98BCC00E43139 /* LoginViewController.swift */,
@@ -337,6 +340,7 @@
 				37DCFBD31EA98D3B00E43139 /* BeaconsViewController.swift in Sources */,
 				37A317931E75B82500BF3AEA /* AppDelegate.swift in Sources */,
 				378FF2861ED63A870056BAE8 /* Settings.swift in Sources */,
+				372FDA461EE73E2100EF2F97 /* EditBeaconViewController.swift in Sources */,
 				377555211EAD21BD004E2B4C /* ServerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -200,10 +200,17 @@ class ServerManager {
             completion(.failure(NSError()))
             return
           }
-          guard let beacon = Mapper<Beacon>().map(JSON: json) else {
+          let realm = try! Realm()
+          guard let beacon = realm.object(ofType: Beacon.self, forPrimaryKey: beacon.id) else {
             completion(.failure(NSError()))
             return
           }
+          guard let updatedBeacon = Mapper<Beacon>().map(JSON: json) else {
+            completion(.failure(NSError()))
+            return
+          }
+
+          try! realm.write { beacon.name = updatedBeacon.name }
 
           completion(.success(beacon))
         case .failure(let error):

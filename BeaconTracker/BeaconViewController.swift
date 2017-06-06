@@ -21,6 +21,7 @@ class BeaconViewController: UITableViewController {
   @IBOutlet weak var trackingSwitch: UISwitch!
   @IBOutlet weak var notificationsSwitch: UISwitch!
 
+  @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var majorValueLabel: UILabel!
   @IBOutlet weak var minorValueLabel: UILabel!
 
@@ -40,7 +41,17 @@ class BeaconViewController: UITableViewController {
       locationsViewController.beacon = beacon
       locationsViewController.locations = beacon.locations
     }
+
+    if segue.identifier == "EditBeacon" {
+      guard let editBeaconViewcontroller = segue.destination as? EditBeaconViewController else {
+        return
+      }
+
+      editBeaconViewcontroller.beacon = beacon
+    }
   }
+
+  // MARK: - Actions
 
   @IBAction func toggleTracking(_ sender: UISwitch) {
     let status = (sender.isOn ? "enabled" : "disabled")
@@ -57,13 +68,21 @@ class BeaconViewController: UITableViewController {
     }
   }
 
+  @IBAction func unwindToBeacon(segue: UIStoryboardSegue) {
+    print("Unwind to beacon")
+    showBeacon()
+  }
+
   // MARK: - Helpers
 
   private func showBeacon() {
     if beacon.name.isEmpty {
-      navigationItem.title = NSLocalizedString("beacon.unnamed", comment: "Unnamed beacon")
+      let placeholder = NSLocalizedString("beacon.unnamed", comment: "Unnamed beacon")
+      navigationItem.title = placeholder
+      nameLabel.text = placeholder
     } else {
       navigationItem.title = beacon.name
+      nameLabel.text = beacon.name
     }
 
     if let location = beacon.lastLocation {

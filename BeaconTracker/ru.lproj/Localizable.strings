@@ -49,3 +49,9 @@
 
 /* Unnamed beacon */
 "beacon.unnamed" = "Без имени";
+
+/* Could not update beacon */
+"editBeacon.banner.error" = "Не удалось обновить маячок";
+
+/* Name must be present */
+"beacon.validations.name.presence" = "Название не может быть пустым";

@@ -49,3 +49,9 @@
 
 /* Unnamed beacon */
 "beacon.unnamed" = "Unnamed beacon";
+
+/* Could not update beacon */
+"editBeacon.banner.error" = "Could not update beacon";
+
+/* Name must be present */
+"beacon.validations.name.presence" = "Name must be present";
