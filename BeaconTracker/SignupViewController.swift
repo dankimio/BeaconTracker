@@ -57,23 +57,34 @@ class SignupViewController: UIViewController {
 
   private func validate() -> Bool {
     guard isEmailValid else {
-      presentBanner(message: "Email is invalid")
+      let message = NSLocalizedString("user.validations.email.invalid", comment: "Invalid email format")
+      presentBanner(message: message)
       return false
     }
     guard nameTextField.text!.characters.count > 0 else {
-      presentBanner(message: "Name must be present")
+      let messageFormat = NSLocalizedString("user.validations.presence",
+                                            comment: "Banner with placeholder for attribute name")
+      let attribute = NSLocalizedString("user.attributes.name", comment: "Name")
+      let message = String(format: messageFormat, attribute)
+      presentBanner(message: message)
       return false
     }
     guard passwordTextField.text! != "" else {
-      presentBanner(message: "Password must be present")
+      let messageFormat = NSLocalizedString("user.validations.presence",
+                                            comment: "Banner with placeholder for attribute name")
+      let attribute = NSLocalizedString("user.attributes.password", comment: "Password")
+      let message = String(format: messageFormat, attribute)
+      presentBanner(message: message)
       return false
     }
     guard passwordTextField.text!.characters.count >= 6 else {
-      presentBanner(message: "Password is too short")
+      let message = NSLocalizedString("user.validations.password.tooShort", comment: "Password is too shprt")
+      presentBanner(message: message)
       return false
     }
     guard passwordTextField.text! == passwordConfirmTextField.text! else {
-      presentBanner(message: "Passwords do not match")
+      let message = NSLocalizedString("user.validations.password.doesNotMatch", comment: "Passwords to not match")
+      presentBanner(message: message)
       return false
     }
 

@@ -27,10 +27,22 @@
 "user.validations.email.invalid" = "Неверный формат почты";
 
 /* Password is too short */
-"user.validations.password.tooShort" = "Слишком короткий пароль";
+"user.validations.password.tooShort" = "Пароль слишком короткий";
 
 /* Invalid password */
 "login.banner.invalidPassword" = "Неверный пароль";
 
 /* User is invalid */
 "signup.banner.error" = "Не удалось зарегистрировать пользователя";
+
+/* Banner with placeholder for attribute name */
+"user.validations.presence" = "%@ не может быть пустым";
+
+/* Passwords to not match */
+"user.validations.password.doesNotMatch" = "Пароли не совпадают";
+
+/* Name */
+"user.attributes.name" = "Имя";
+
+/* Password */
+"user.attributes.password" = "Пароль";

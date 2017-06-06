@@ -44,7 +44,12 @@ class InputViewController: UITableViewController {
 
   private func validate() -> Bool {
     guard textField.text!.characters.count > 0 else {
-      presentBanner(message: "\(inputType.rawValue.capitalized) must be present")
+      let messageFormat = NSLocalizedString(
+        "user.validations.presence",
+        comment: "Banner with placeholder for attribute name"
+      )
+      let message = String(format: messageFormat, inputType.rawValue.capitalized)
+      presentBanner(message: message)
       return false
     }
 

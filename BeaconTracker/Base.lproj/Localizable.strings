@@ -34,3 +34,15 @@
 
 /* User is invalid */
 "signup.banner.error" = "User is invalid";
+
+/* Banner with placeholder for attribute name */
+"user.validations.presence" = "%@ must be present";
+
+/* Passwords to not match */
+"user.validations.password.doesNotMatch" = "Passwords to not match";
+
+/* Name */
+"user.attributes.name" = "Name";
+
+/* Password */
+"user.attributes.password" = "Password";
