@@ -13,9 +13,12 @@ enum InputType: String {
 
   var title: String {
     switch self {
-    case .email: return "Email"
-    case .name: return "Name"
-    case .password: return "Password"
+    case .email:
+      return NSLocalizedString("inputType.email", comment: "Email placeholder")
+    case .name:
+      return NSLocalizedString("inputType.name", comment: "Name placeholder")
+    case .password:
+      return NSLocalizedString("inputType.password", comment: "Password placeholder")
     }
   }
 }

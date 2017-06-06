@@ -50,7 +50,7 @@ class BeaconViewController: UITableViewController {
       switch result {
       case .success(_): return
       case .failure(_):
-        let message = (sender.isOn ? "Could not enable tracking" : "Could not disable tracking")
+        let message = NSLocalizedString("beacon.banner.error", comment: "Could not update settings")
         self.presentBanner(message: message)
         self.trackingSwitch.setOn(!sender.isOn, animated: true)
       }

@@ -61,7 +61,10 @@ class SettingsViewController: UITableViewController {
   @IBAction func unwindToSettings(segue: UIStoryboardSegue) {
     loadUser()
 
-    let banner = NotificationBanner(title: "Profile was successfully updated", style: .success)
+    let banner = NotificationBanner(
+      title: NSLocalizedString("settings.banner.success", comment: "Profile was successfully updated"),
+      style: .success
+    )
     banner.duration = 1
     banner.show()
   }

@@ -1,0 +1,36 @@
+
+/* Email placeholder */
+"inputType.email" = "Email";
+
+/* Name placeholder */
+"inputType.name" = "Name";
+
+/* Password placeholder */
+"inputType.password" = "Password";
+
+/* Could not update settings */
+"beacon.banner.error" = "Could not update settings";
+
+/* Could not load beacons */
+"beacons.banner.error" = "Could not load beacons";
+
+/* Could not load location history */
+"locations.banner.error" = "Could not load location history";
+
+/* Profile was successfully updated */
+"settings.banner.success" = "Profile was successfully updated";
+
+/* Could not update the user */
+"input.banner.error" = "Could not update the profile";
+
+/* Invalid email */
+"user.validations.email.invalid" = "Invalid email format";
+
+/* Password is too short */
+"user.validations.password.tooShort" = "Password is too short";
+
+/* Invalid password */
+"login.banner.invalidPassword" = "Invalid password";
+
+/* User is invalid */
+"signup.banner.error" = "User is invalid";

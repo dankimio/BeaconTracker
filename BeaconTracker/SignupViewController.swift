@@ -34,7 +34,8 @@ class SignupViewController: UIViewController {
         case .success(_):
           self.performSegue(withIdentifier: "UnwindFromSignupToBeacons", sender: self)
         case .failure(_):
-          self.presentBanner(message: "User is invalid")
+          let message = NSLocalizedString("signup.banner.error", comment: "User is invalid")
+          self.presentBanner(message: message)
         }
       }
     )

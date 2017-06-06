@@ -1,0 +1,36 @@
+
+/* Email placeholder */
+"inputType.email" = "Email";
+
+/* Name placeholder */
+"inputType.name" = "Имя";
+
+/* Password placeholder */
+"inputType.password" = "Пароль";
+
+/* Could not update settings */
+"beacon.banner.error" = "Не удалось обновить настройки";
+
+/* Could not load beacons */
+"beacons.banner.error" = "Не удалось загрузить маячки";
+
+/* Could not load location history */
+"locations.banner.error" = "Не удалось загрузить историю местоположений";
+
+/* Profile was successfully updated */
+"settings.banner.success" = "Профиль успешно обновлён";
+
+/* Could not update the user */
+"input.banner.error" = "Не удалось обновить профиль";
+
+/* Invalid email */
+"user.validations.email.invalid" = "Неверный формат почты";
+
+/* Password is too short */
+"user.validations.password.tooShort" = "Слишком короткий пароль";
+
+/* Invalid password */
+"login.banner.invalidPassword" = "Неверный пароль";
+
+/* User is invalid */
+"signup.banner.error" = "Не удалось зарегистрировать пользователя";

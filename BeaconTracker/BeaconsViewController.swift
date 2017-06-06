@@ -148,9 +148,10 @@ class BeaconsViewController: UITableViewController {
       case .success(_):
         self.tableView.reloadData()
       case .failure(_):
-        let banner = NotificationBanner(title: "Could not load beacons",
-                                        subtitle: "Try again later",
-                                        style: .danger)
+        let banner = NotificationBanner(
+          title: NSLocalizedString("beacons.banner.error", comment: "Could not load beacons"),
+          style: .danger
+        )
         banner.duration = 1
         banner.show()
       }

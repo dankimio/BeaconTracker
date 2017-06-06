@@ -32,7 +32,8 @@ class LoginViewController: UIViewController {
         case .success(_):
           self.performSegue(withIdentifier: "UnwindFromLoginToBeacons", sender: self)
         case .failure(_):
-          self.presentBanner(message: "Invalid password")
+          let message = NSLocalizedString("login.banner.invalidPassword", comment: "Invalid password")
+          self.presentBanner(message: message)
         }
       }
   }

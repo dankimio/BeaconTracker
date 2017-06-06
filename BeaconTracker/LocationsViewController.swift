@@ -76,9 +76,10 @@ class LocationsViewController: UITableViewController {
         case .success(_):
           self.tableView.reloadData()
         case .failure(_):
-          let banner = NotificationBanner(title: "Could not load location history",
-                                          subtitle: "Try again later",
-                                          style: .danger)
+          let banner = NotificationBanner(
+            title: NSLocalizedString("locations.banner.error", comment: "Could not load location history"),
+            style: .danger
+          )
           banner.duration = 1
           banner.show()
         }

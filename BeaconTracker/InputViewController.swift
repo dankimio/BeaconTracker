@@ -52,7 +52,8 @@ class InputViewController: UITableViewController {
       let emailRule = ValidationRulePattern(pattern: EmailValidationPattern.standard,
                                             error: ValidationError())
       guard emailRule.validate(input: textField.text!) else {
-        presentBanner(message: "Invalid email")
+        let message = NSLocalizedString("user.validations.email.invalid", comment: "Invalid email")
+        presentBanner(message: message)
         return false
       }
     }
@@ -61,7 +62,8 @@ class InputViewController: UITableViewController {
       let minLengthRule = ValidationRuleLength(min: 6, error: ValidationError())
 
       guard minLengthRule.validate(input: textField.text!) else {
-        presentBanner(message: "Password is too short")
+        let message = NSLocalizedString("user.validations.password.tooShort", comment: "Password is too short")
+        presentBanner(message: message)
         return false
       }
     }
@@ -79,7 +81,8 @@ class InputViewController: UITableViewController {
         case .success(_):
           self.performSegue(withIdentifier: "UnwindFromInputToSettings", sender: self)
         case .failure(_):
-          self.presentBanner(message: "Could not update user")
+          let message = NSLocalizedString("input.banner.error", comment: "Could not update the user")
+          self.presentBanner(message: message)
         }
       }
     )
