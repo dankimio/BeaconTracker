@@ -224,7 +224,7 @@ extension TrackingManager: CLLocationManagerDelegate {
 
   func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
     print("didEnterRegion")
-    notify(title: "didEnterRegion", body: "didEnterRegion", identifier: "didEnterRegion")
+    notify(title: "Visibility", body: "Your bag is now visible", identifier: "didEnterRegion")
 
     // Start ranging in background
     guard let region = region as? CLBeaconRegion else { return }
@@ -234,7 +234,7 @@ extension TrackingManager: CLLocationManagerDelegate {
 
   func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
     print("didExitRegion: \(region)")
-    notify(title: "didExitRegion", body: "didExitRegion", identifier: "didExitRegion")
+    notify(title: "Visibility", body: "You bag disappeared from sight", identifier: "didExitRegion")
 
     // Stop background ranging
     stopRanging(region: region as! CLBeaconRegion, withLocationManager: manager)
