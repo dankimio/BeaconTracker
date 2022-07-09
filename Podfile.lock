@@ -7,11 +7,11 @@ PODS:
     - MarqueeLabel (~> 4.0.5)
     - SnapKit (~> 5.0.1)
   - ObjectMapper (3.5.3)
-  - Realm (3.21.0):
-    - Realm/Headers (= 3.21.0)
-  - Realm/Headers (3.21.0)
-  - RealmSwift (3.21.0):
-    - Realm (= 3.21.0)
+  - Realm (5.5.1):
+    - Realm/Headers (= 5.5.1)
+  - Realm/Headers (5.5.1)
+  - RealmSwift (5.5.1):
+    - Realm (= 5.5.1)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
@@ -19,7 +19,7 @@ DEPENDENCIES:
   - AlamofireNetworkActivityIndicator (~> 3.0)
   - NotificationBannerSwift (~> 3.0)
   - ObjectMapper (~> 3.5)
-  - RealmSwift (~> 3.0)
+  - RealmSwift (~> 5.0)
 
 SPEC REPOS:
   trunk:
@@ -38,10 +38,10 @@ SPEC CHECKSUMS:
   MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
   NotificationBannerSwift: 49912a48b37e2f55d1cef4e8a38f15394f66a70a
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
-  Realm: 38e9dcb19104b58407167d99f70d4995f7c16023
-  RealmSwift: 3183cc1ad48378fbcd634311b22c0e6c44021152
+  Realm: c2ffe0667f9c98c9ba65f608ba85684d39826145
+  RealmSwift: 5a35c1c35c3e1925e6fcd092c881d5cc4a826bff
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 264cc85594600e4fc8912c75468a351fddcccb4e
+PODFILE CHECKSUM: 4c85725ca2ecf52b334fc14dfa993a1ee88a4eae
 
 COCOAPODS: 1.11.3
