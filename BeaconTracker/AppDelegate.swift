@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   let trackingManager = TrackingManager.shared
 
   func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     // Alamofire: enable activity indicator
     NetworkActivityIndicatorManager.shared.isEnabled = true

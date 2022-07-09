@@ -9,7 +9,7 @@ target 'BeaconTracker' do
   pod 'Alamofire', '~> 4.4'
   pod 'AlamofireNetworkActivityIndicator', '~> 2.1'
   pod 'RealmSwift', '~> 2.7'
-  pod 'ObjectMapper', '~> 2.2'
-  pod 'NotificationBannerSwift', '~> 1.2'
-  pod 'Validator', '~> 2.1'
+  pod 'ObjectMapper', '~> 3.4.2'
+  pod 'NotificationBannerSwift', '~> 2.1.0'
+  pod 'Validator', '~> 3.0'
 end
