@@ -6,9 +6,9 @@ target 'BeaconTracker' do
   use_frameworks!
 
   # Pods for BeaconTracker
-  pod 'Alamofire', '~> 4.4'
-  pod 'AlamofireNetworkActivityIndicator', '~> 2.1'
-  pod 'RealmSwift', '~> 2.7'
-  pod 'ObjectMapper', '~> 3.4.2'
-  pod 'NotificationBannerSwift', '~> 2.1.0'
+  pod 'Alamofire', '~> 5.0'
+  pod 'AlamofireNetworkActivityIndicator', '~> 3.0'
+  pod 'RealmSwift', '~> 3.0'
+  pod 'ObjectMapper', '~> 3.5'
+  pod 'NotificationBannerSwift', '~> 3.0'
 end
