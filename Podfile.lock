@@ -1,18 +1,18 @@
 PODS:
-  - Alamofire (4.4.0)
-  - AlamofireNetworkActivityIndicator (2.1.0):
-    - Alamofire (~> 4.1)
-  - MarqueeLabel/Swift (3.0.5)
-  - NotificationBannerSwift (1.2.0):
-    - MarqueeLabel/Swift
-    - SnapKit (~> 3.2.0)
-  - ObjectMapper (2.2.7)
-  - Realm (2.8.0):
-    - Realm/Headers (= 2.8.0)
-  - Realm/Headers (2.8.0)
-  - RealmSwift (2.8.0):
-    - Realm (= 2.8.0)
-  - SnapKit (3.2.0)
+  - Alamofire (4.9.1)
+  - AlamofireNetworkActivityIndicator (2.4.0):
+    - Alamofire (~> 4.8)
+  - MarqueeLabel/Swift (3.2.1)
+  - NotificationBannerSwift (1.8.0):
+    - MarqueeLabel/Swift (~> 3.2.0)
+    - SnapKit (~> 4.0.1)
+  - ObjectMapper (2.2.9)
+  - Realm (2.10.2):
+    - Realm/Headers (= 2.10.2)
+  - Realm/Headers (2.10.2)
+  - RealmSwift (2.10.2):
+    - Realm (= 2.10.2)
+  - SnapKit (4.0.1)
   - Validator (2.1.1)
 
 DEPENDENCIES:
@@ -23,17 +23,29 @@ DEPENDENCIES:
   - RealmSwift (~> 2.7)
   - Validator (~> 2.1)
 
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireNetworkActivityIndicator
+    - MarqueeLabel
+    - NotificationBannerSwift
+    - ObjectMapper
+    - Realm
+    - RealmSwift
+    - SnapKit
+    - Validator
+
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
-  MarqueeLabel: 8a25b2cf02cf52165022f01369e63536c58fcc00
-  NotificationBannerSwift: 77f96e1c418309600aad70b21247d9b3cbc360e3
-  ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
-  Realm: 929243ad2b618b3232e70658bedc61110e7563f1
-  RealmSwift: 5b7079b891f2833d1849294161ba3e092bbda3f6
-  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
+  MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
+  NotificationBannerSwift: 49fc4be7fabada55b189b50e72184c92edd5f7f7
+  ObjectMapper: 63cfe41bc6f8e7c8f44344c49901b8ae7de14c52
+  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
+  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   Validator: b1793fbfd0046097551d0edd18e2c30792d69ef5
 
 PODFILE CHECKSUM: 13aea7ae052fbb656854e7f31d8c46987896afa6
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.11.3
