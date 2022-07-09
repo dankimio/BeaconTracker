@@ -8,7 +8,6 @@
 
 import UIKit
 import NotificationBannerSwift
-import Validator
 import Alamofire
 
 class InputViewController: UITableViewController {
@@ -43,7 +42,7 @@ class InputViewController: UITableViewController {
   }
 
   private func validate() -> Bool {
-    guard textField.text!.characters.count > 0 else {
+    guard textField.text!.count > 0 else {
       let messageFormat = NSLocalizedString(
         "user.validations.presence",
         comment: "Banner with placeholder for attribute name"
@@ -53,23 +52,12 @@ class InputViewController: UITableViewController {
       return false
     }
 
-    if inputType == .email {
-      let emailRule = ValidationRulePattern(pattern: EmailValidationPattern.standard,
-                                            error: ValidationError())
-      guard emailRule.validate(input: textField.text!) else {
-        let message = NSLocalizedString("user.validations.email.invalid", comment: "Invalid email")
-        presentBanner(message: message)
-        return false
-      }
-    }
+    // TODO: implement email validation
 
     if inputType == .password {
-      let minLengthRule = ValidationRuleLength(min: 6, error: ValidationError())
-
-      guard minLengthRule.validate(input: textField.text!) else {
+      if textField.text!.count < 6 {
         let message = NSLocalizedString("user.validations.password.tooShort", comment: "Password is too short")
         presentBanner(message: message)
-        return false
       }
     }
 
