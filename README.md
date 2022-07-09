@@ -2,11 +2,8 @@
 
 ## Version info
 
-- Target iOS version: 10.0
-- Developed with Xcode 8.3
-- Swift version: 3.1
-- Ruby version: 2.4
-- CocoaPods version: 1.2.1
+- Target iOS version: 12.4
+- Swift version: 4.2
 
 ## Installation
 
