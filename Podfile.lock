@@ -13,7 +13,6 @@ PODS:
   - RealmSwift (2.10.2):
     - Realm (= 2.10.2)
   - SnapKit (4.2.0)
-  - Validator (3.2.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -21,7 +20,6 @@ DEPENDENCIES:
   - NotificationBannerSwift (~> 2.1.0)
   - ObjectMapper (~> 3.4.2)
   - RealmSwift (~> 2.7)
-  - Validator (~> 3.0)
 
 SPEC REPOS:
   trunk:
@@ -33,7 +31,6 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SnapKit
-    - Validator
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -44,8 +41,7 @@ SPEC CHECKSUMS:
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
   RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  Validator: 80a6f567220c962dfd2d9928ae98a8c1d164f6f4
 
-PODFILE CHECKSUM: d65760afbcb79487c7f5b735f04e184ec371d779
+PODFILE CHECKSUM: ffd24e5c29784b593dd1d05570219aceb2c23e6a
 
 COCOAPODS: 1.11.3
